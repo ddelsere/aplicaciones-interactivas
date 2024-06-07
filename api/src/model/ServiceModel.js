@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const User = require('./UserModel'); // Importa el modelo de Usuario
 
-// Define the service model
+// Defino el Schema
 const Service = sequelize.define('Service', {
     name: {
         type: DataTypes.STRING,
@@ -19,7 +20,7 @@ const Service = sequelize.define('Service', {
         }
     },
     duration: {
-        type: DataTypes.INTEGER, // Duration in minutes
+        type: DataTypes.INTEGER, // 
         allowNull: false,
         validate: {
             min: 0
@@ -45,5 +46,9 @@ const Service = sequelize.define('Service', {
         }
     }
 });
+
+// Define the relationship
+User.hasMany(Service, { foreignKey: 'userId' });
+Service.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = Service;

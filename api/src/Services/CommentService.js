@@ -1,6 +1,6 @@
-const Comment = require('../models/commentModel');
-const User = require('../models/userModel');
-const Booking = require('../models/bookingModel');
+const Comment = require('../model/commentModel');
+const User = require('../model/UserModel');
+const Booking = require('../model/BookingModel');
 
 // Create a new comment
 const createComment = async (commentData) => {

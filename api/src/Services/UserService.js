@@ -1,5 +1,5 @@
-const User = require('../models/UserModel');
-const bcrypt = require('bcrypt');
+const User = require('../model/UserModel');
+// const bcrypt = require('bcrypt');
 
 //TODO: VER QUE HACER CON LA PASSWORD A VER SI SE ENCRIPTA O ALGO
 

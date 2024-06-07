@@ -1,4 +1,4 @@
-const Service = require('../models/ServiceModel');
+const Service = require('../model/ServiceModel');
 
 
 // Create a new service
@@ -24,7 +24,12 @@ const getAllServices = async () => {
 // Get a service by ID
 const getServiceById = async (id) => {
     try {
-        const service = await Service.findByPk(id);
+        // const service = await Service.findByPk(id);
+        const service = await Service.findAllfindAll({
+            where: {
+              idProvider: id,
+            },
+          });
         if (!service) {
             throw new Error('Service not found');
         }
@@ -48,9 +53,25 @@ const updateService = async (id, updateData) => {
     }
 };
 
+// Update a service
+const deleteService = async (id, updateData) => {
+    try {
+        const service = await Service.findByPk(id);
+        updateData.active = false;
+        if (!service) {
+            throw new Error('Service not found');
+        }
+        await service.update(updateData); //baja logica
+        return service;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
 module.exports = {
     createService,
     getAllServices,
     getServiceById,
-    updateService
+    updateService,
+    deleteService
 };
