@@ -19,12 +19,12 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/pets', petRoutes);
 
 // Sincroniza los modelos con la base de datos
-sequelize.sync({ force: true }) // Usa { alter: true } si no quieres borrar datos
-    .then(() => {
-        console.log('Database & tables created!');
-    })
-    .catch(err => {
-        console.log(err);
-    });
+// sequelize.sync({ force: true, alter: true }) // Usa { alter: true } si no quieres borrar datos
+//     .then(() => {
+//         console.log('Database & tables created!');
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
 
 module.exports = app;
