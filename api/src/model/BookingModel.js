@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Service = require('./ServiceModel');
+const User = require('./UserModel');
 
 // Define the booking model
 const Booking = sequelize.define('Booking', {
@@ -16,7 +18,18 @@ const Booking = sequelize.define('Booking', {
     },
     serviceId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        references: {
+            model: Service,
+            key: 'id'
+        }
+    },
+    idUser: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: User,
+            key: 'id'
+        },
+        unique: true,  //  one-to-one relationship
     },
     bookingDate: {
         type: DataTypes.DATE,
@@ -25,14 +38,6 @@ const Booking = sequelize.define('Booking', {
     status: {
         type: DataTypes.STRING,
         defaultValue: 'pending',
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
     }
 }, {
     timestamps: true,
@@ -42,5 +47,8 @@ const Booking = sequelize.define('Booking', {
         }
     }
 });
+// Define associations
+Booking.belongsTo(User, { foreignKey: 'idUser' });
+Booking.belongsTo(Service, {foreignKey: 'serviceId'})
 
 module.exports = Booking;

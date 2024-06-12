@@ -5,6 +5,7 @@ const serviceRoutes = require('./src/routes/ServiceRoute');
 const commentRoutes = require('./src/routes/CommentRoute');
 const bookingRoutes = require('./src/routes/BookingRoute');
 const userRoutes = require('./src/routes/UserRoute');
+const petRoutes = require('./src/routes/PetRoute')
 const sequelize = require('./src/config/database');
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use('/api/v1/services', serviceRoutes);
 app.use('/api/v1/services/comments', commentRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/pets', petRoutes);
 
 // Sincroniza los modelos con la base de datos
 sequelize.sync({ force: true }) // Usa { alter: true } si no quieres borrar datos

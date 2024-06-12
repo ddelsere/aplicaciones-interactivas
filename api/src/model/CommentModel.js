@@ -2,21 +2,38 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./UserModel');
 const Booking = require('./BookingModel');
+const Service = require('./ServiceModel');
 
 // Define the comment model
 const Comment = sequelize.define('Comment', {
     content: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING(140),
         allowNull: false,
     },
-    createdAt: {
+    status:{
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    id_user: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: User,
+            key: 'id'
+        },
+        unique: true,  // Ensures one-to-one relationship
+    },
+    date: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
     },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-    },
+    id_service: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Service,
+            key: 'id'
+        },
+        unique: true,  // Ensures one-to-one relationship
+    }
 }, {
     timestamps: true,
     hooks: {
@@ -27,7 +44,7 @@ const Comment = sequelize.define('Comment', {
 });
 
 // Define associations
-Comment.belongsTo(User, { foreignKey: 'userId' });
-Comment.belongsTo(Booking, { foreignKey: 'bookingId' });
+Comment.belongsTo(User, { foreignKey: 'id_user' });
+Comment.belongsTo(Service, { foreignKey: 'id_service' });
 
 module.exports = Comment;
