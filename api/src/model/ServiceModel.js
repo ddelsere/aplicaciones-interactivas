@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const User = require('./UserModel'); // Importa el modelo de Usuario
+const Provider = require('./providerModel'); // Importa el modelo de Usuario
+const Category = require('./categoryModel');
 
 // Defino el Schema
 const Service = sequelize.define('Service', {
@@ -9,7 +10,7 @@ const Service = sequelize.define('Service', {
         allowNull: false,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(200),
         allowNull: false,
     },
     price: {
@@ -20,23 +21,35 @@ const Service = sequelize.define('Service', {
         }
     },
     duration: {
-        type: DataTypes.INTEGER, // 
+        type: DataTypes.FLOAT, // 
         allowNull: false,
         validate: {
             min: 0
         }
     },
-    category: {
+    frequency: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    zone: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Category,
+            key: 'id'
+        }
+    },
+    id_provider: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Provider,
+            key: 'id'
+        }  
     }
 }, {
     timestamps: true,
@@ -48,7 +61,8 @@ const Service = sequelize.define('Service', {
 });
 
 // Define the relationship
-User.hasMany(Service, { foreignKey: 'userId' });
-Service.belongsTo(User, { foreignKey: 'userId' });
+//Provider.hasMany(Provider, { foreignKey: 'provider_id' });
+Service.belongsTo(Provider, { foreignKey: 'id_provider' });
+Service.belongsTo(Category, {foreignKey: "category_id"})
 
 module.exports = Service;

@@ -8,8 +8,8 @@ router.post('/', serviceController.createService);
 // Route to get all services
 router.get('/', serviceController.getAllServices);
 
-// Route to get a service by ID
-router.get('/:id', serviceController.getServiceById);
+// Route to get a service by ID provider
+router.get('/:id_provider', serviceController.getServiceByIdProvider);
 
 // Route to update a service
 router.put('/:id', serviceController.updateService);

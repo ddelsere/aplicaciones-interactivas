@@ -1,12 +1,15 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, INTEGER, CHAR } = require('sequelize');
 const sequelize = require('../config/database');
 
 // Define the user model
 const User = sequelize.define('User', {
-    username: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+    },
+    surname : {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     email: {
         type: DataTypes.STRING,
@@ -20,14 +23,18 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    phoneNumber: {
+        type: DataTypes.STRING(11),
+        allowNull: false,
     },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
+    type: {
+        type: DataTypes.CHAR(1), // P:proveedor, C:cliente
+        allowNull: false,
+    }
 }, {
     timestamps: true,
     hooks: {
