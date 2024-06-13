@@ -12,7 +12,7 @@ const Pet = sequelize.define('Pet', {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    user_id: {
+    idUser: {
         type: DataTypes.INTEGER,
         references: {
             model: User,
@@ -29,6 +29,6 @@ const Pet = sequelize.define('Pet', {
 });
 
 // Define associations
-Pet.belongsTo(User, { foreignKey: 'user_id' });
+Pet.belongsTo(User, { foreignKey: 'idUser' });
 
 module.exports = Pet;

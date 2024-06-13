@@ -35,7 +35,7 @@ const Service = sequelize.define('Service', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    category_id: {
+    idCategory: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -43,13 +43,17 @@ const Service = sequelize.define('Service', {
             key: 'id'
         }
     },
-    id_provider: {
+    idProvider: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: Provider,
             key: 'id'
         }  
+    }, 
+    active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
     }
 }, {
     timestamps: true,
@@ -62,7 +66,7 @@ const Service = sequelize.define('Service', {
 
 // Define the relationship
 //Provider.hasMany(Provider, { foreignKey: 'provider_id' });
-Service.belongsTo(Provider, { foreignKey: 'id_provider' });
-Service.belongsTo(Category, {foreignKey: "category_id"})
+Service.belongsTo(Provider, { foreignKey: 'idProvider' });
+Service.belongsTo(Category, {foreignKey: "idCategory"})
 
 module.exports = Service;

@@ -1,7 +1,7 @@
 const petService = require('../services/petService');
 
 // Create a new pet
-exports.createPet = async (req, res) => {
+exports.createPet = async (req, res) => { //checked
     try {
         const pet = await petService.createPet(req.body);
         res.status(201).json(pet);
@@ -11,7 +11,7 @@ exports.createPet = async (req, res) => {
 };
 
 // Get all pets
-exports.getAllPets = async (req, res) => {
+exports.getAllPets = async (req, res) => { //checked
     try {
         const pets = await petService.getAllPets();
         res.status(200).json(pets);
@@ -21,9 +21,9 @@ exports.getAllPets = async (req, res) => {
 };
 
 // Get a pet by ID
-exports.getPetById = async (req, res) => {
+exports.getPetByIdUser = async (req, res) => { //checked
     try {
-        const pet = await petService.getPetById(req.params.id);
+        const pet = await petService.getPetByIdUser(req.params.id);
         res.status(200).json(pet);
     } catch (error) {
         res.status(404).json({ error: error.message });
@@ -31,7 +31,7 @@ exports.getPetById = async (req, res) => {
 };
 
 // Update a pet
-exports.updatePet = async (req, res) => {
+exports.updatePet = async (req, res) => { //checked
     try {
         const pet = await petService.updatePet(req.params.id, req.body);
         res.status(200).json(pet);

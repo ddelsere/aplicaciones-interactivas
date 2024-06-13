@@ -8,7 +8,7 @@ const Provider = sequelize.define('Provider', {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    id_user: {
+    idUser: {
         type: DataTypes.INTEGER,
         references: {
             model: User,
@@ -26,6 +26,6 @@ const Provider = sequelize.define('Provider', {
 });
 
 // Define associations
-Provider.belongsTo(User, { foreignKey: 'id_user' });
+Provider.belongsTo(User, { foreignKey: 'idUser' });
 
 module.exports = Provider;

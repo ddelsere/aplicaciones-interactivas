@@ -24,10 +24,14 @@ const getAllPets = async () => {
 };
 
 // Get a pet by ID
-const getPetById = async (id) => {
+const getPetByIdUser = async (id) => {
     try {
-        const pet = await Pet.findByPk(id, {
+        console.log(id)
+        const pet = await Pet.findAll({
             include: [User],
+            where: {
+                idUser: id,
+            }
         });
         if (!pet) {
             throw new Error('Pet not found');
@@ -69,7 +73,7 @@ const deletePet = async (id) => {
 module.exports = {
     createPet,
     getAllPets,
-    getPetById,
+    getPetByIdUser,
     updatePet,
     deletePet,
 };

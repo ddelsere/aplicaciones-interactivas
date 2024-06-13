@@ -4,7 +4,7 @@ const Service = require('../model/ServiceModel');
 // Create a new service
 const createService = async (serviceData) => { //checked
     try {
-        const service = await Service.create(serviceData);
+        const service = await Service.create({...serviceData, active: true});
         return service;
     } catch (error) {
         throw new Error(error.message);
@@ -14,7 +14,11 @@ const createService = async (serviceData) => { //checked
 // Get all services
 const getAllServices = async () => { //checked
     try {
-        const services = await Service.findAll();
+        const services = await Service.findAll({
+            where: {
+                activo: true,
+            },
+          });
         return services;
     } catch (error) {
         throw new Error(error.message);
@@ -27,7 +31,8 @@ const getServiceByIdProvider = async (id) => { //checked
         // const service = await Service.findByPk(id);
         const service = await Service.findAll({
             where: {
-                id_provider: id,
+                idProvider: id,
+                active : true
             },
           });
         if (!service) {
@@ -89,6 +94,7 @@ module.exports = {
     createService,
     getAllServices,
     getServiceByIdProvider,
+    getServiceByFilter,
     updateService,
     deleteService
 };

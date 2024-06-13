@@ -5,7 +5,7 @@ const Booking = require('../model/BookingModel');
 // Create a new comment
 const createComment = async (commentData) => {
     try {
-        const comment = await Comment.create(commentData);
+        const comment = await Comment.create({...commentData, status: 'PENDIENTE', date: new Date()});
         return comment;
     } catch (error) {
         throw new Error(error.message);
@@ -13,7 +13,7 @@ const createComment = async (commentData) => {
 };
 
 // Get all comments
-const getAllComments = async () => {
+const getAllComments = async () => { //no se usa
     try {
         const comments = await Comment.findAll({
             include: [User, Booking],
@@ -25,15 +25,24 @@ const getAllComments = async () => {
 };
 
 // Get a comment by ID
-const getCommentById = async (id) => {
+const getCommentByIdService = async (id, userType) => {
     try {
-        const comment = await Comment.findByPk(id, {
-            include: [User, Booking],
-        });
-        if (!comment) {
-            throw new Error('Comment not found');
+        if(userType == "C"){
+            const comments = await Comment.findAll({
+                where: {
+                    idService: id,
+                    status: 'ACEPTADO'
+                }
+            });            
+            return comments;
+        }else{
+            const comments = await Comment.findAll({
+                where: {
+                    idService: id
+                }
+            });            
+            return comments;
         }
-        return comment;
     } catch (error) {
         throw new Error(error.message);
     }
@@ -42,6 +51,7 @@ const getCommentById = async (id) => {
 // Update a comment
 const updateComment = async (id, updateData) => {
     try {
+        console.log(updateData)
         const comment = await Comment.findByPk(id);
         if (!comment) {
             throw new Error('Comment not found');
@@ -54,23 +64,22 @@ const updateComment = async (id, updateData) => {
 };
 
 // Delete a comment
-const deleteComment = async (id) => {
-    try {
-        const comment = await Comment.findByPk(id);
-        if (!comment) {
-            throw new Error('Comment not found');
-        }
-        await comment.destroy();
-        return { message: 'Comment deleted successfully' };
-    } catch (error) {
-        throw new Error(error.message);
-    }
-};
+// const deleteComment = async (id) => {
+//     try {
+//         const comment = await Comment.findByPk(id);
+//         if (!comment) {
+//             throw new Error('Comment not found');
+//         }
+//         await comment.destroy();
+//         return { message: 'Comment deleted successfully' };
+//     } catch (error) {
+//         throw new Error(error.message);
+//     }
+// };
 
 module.exports = {
     createComment,
     getAllComments,
-    getCommentById,
-    updateComment,
-    deleteComment,
+    getCommentByIdService,
+    updateComment
 };

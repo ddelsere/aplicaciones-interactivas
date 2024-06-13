@@ -9,9 +9,9 @@ const createUser = async (userData) => { //checked
     try {
         // const hashedPassword = await bcrypt.hash(userData.password, 10);
         const user = await User.create({ ...userData});
-        console.log(user);
+        
         if(userData.type == "P"){
-            let data = {id_user: user.id}
+            let data = {idUser: user.id}
             await Provider.create(data)
         }
         return user;
