@@ -1,16 +1,21 @@
-const login = (req, res) => {
+const authService = require('../services/authenticationService');
+
+exports.login = async (req, res) => {
+  try{
     const { email, password } = req.query;
-    // Logic for handling login
-    res.status(200).json({ email, password, userType: 'exampleType' });
-  };
+//devuleve el usuario logueado 
+    const user = await authService.doLogin(email, password);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
   
-  const resetPassword = (req, res) => {
+exports.resetPassword = async (req, res) => {
     const { email, password } = req.body;
     // Logic for handling password reset
+    console.log(email)
+    const user = await authService.resetPassword(email, password);
     res.status(200).json({ email, password });
   };
   
-  module.exports = {
-    login,
-    resetPassword
-  };

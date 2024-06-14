@@ -35,6 +35,14 @@ const Service = sequelize.define('Service', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    score: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    species: {
+        type: DataTypes.STRING(10),
+        allowNull: false
+    },
     idCategory: {
         type: DataTypes.INTEGER,
         allowNull: false,

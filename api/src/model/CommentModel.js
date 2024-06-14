@@ -9,6 +9,10 @@ const Comment = sequelize.define('Comment', {
         type: DataTypes.STRING(140),
         allowNull: false,
     },
+    score: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
     status:{
         type: DataTypes.STRING,
         allowNull: false,

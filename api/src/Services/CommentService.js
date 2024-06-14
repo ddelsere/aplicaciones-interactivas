@@ -1,16 +1,46 @@
 const Comment = require('../model/commentModel');
 const User = require('../model/UserModel');
 const Booking = require('../model/BookingModel');
+const Service = require('../model/ServiceModel');
+const sequelize = require('../config/database');
 
 // Create a new comment
 const createComment = async (commentData) => {
     try {
         const comment = await Comment.create({...commentData, status: 'PENDIENTE', date: new Date()});
+        //calcula el score del service en funcion de todos los score de los comentarios del servicio
+
+        let score = await calculateAverageScore(commentData.idService);
+        const service = await Service.findByPk(commentData.idService);
+        if (!service) {
+            throw new Error('Service not found');
+        }
+        await service.update({...service, score: score});
+
         return comment;
     } catch (error) {
         throw new Error(error.message);
     }
 };
+
+// Function to calculate the average score for a specific idService
+async function calculateAverageScore(idService) {
+    try {
+        const result = await Comment.findAll({
+            attributes: [
+                [sequelize.fn('AVG', sequelize.col('score')), 'averageScore']
+            ],
+            where: {
+                idService: idService
+            }
+        });
+
+        const averageScore = result[0].get('averageScore');
+        return averageScore;
+    } catch (error) {
+        console.error('Error calculating average score:', error);
+    }
+}
 
 // Get all comments
 const getAllComments = async () => { //no se usa
