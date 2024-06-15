@@ -1,4 +1,3 @@
-const userService = require('../services/UserService');
 const User = require('../model/UserModel');
 
 const doLogin = async (email, password) =>{
@@ -9,7 +8,7 @@ const doLogin = async (email, password) =>{
                 password: password
             }
         });
-        console.log(user);
+        
         if (!user) {
             throw new Error('User not found');
         }

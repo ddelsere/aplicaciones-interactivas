@@ -20,7 +20,7 @@ exports.getAllBookings = async (req, res) => { //no se usa, sacarla
     }
 };
 
-// Get a booking by ID
+// Get a booking by ID user
 exports.getBookingByIdUser = async (req, res) => { //checked
     try {
         const booking = await bookingService.getBookingByIdUser(req.params.id, req.params.userType);
@@ -42,12 +42,3 @@ exports.updateBooking = async (req, res) => { //checked
     }
 };
 
-// Delete a booking
-// exports.deleteBooking = async (req, res) => {
-//     try {
-//         await bookingService.deleteBooking(req.params.id);
-//         res.status(200).json({ message: 'Booking deleted successfully' });
-//     } catch (error) {
-//         res.status(400).json({ error: error.message });
-//     }
-// };

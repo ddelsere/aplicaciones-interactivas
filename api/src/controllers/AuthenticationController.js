@@ -13,9 +13,7 @@ exports.login = async (req, res) => {
   
 exports.resetPassword = async (req, res) => {
     const { email, password } = req.body;
-    // Logic for handling password reset
-    console.log(email)
-    const user = await authService.resetPassword(email, password);
+    await authService.resetPassword(email, password);
     res.status(200).json({ email, password });
   };
   

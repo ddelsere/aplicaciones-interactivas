@@ -20,7 +20,7 @@ exports.getAllComments = async (req, res) => { //no se usa
     }
 };
 
-// Get a comment by ID
+// Get a comment by ID service
 exports.getCommentByIdService = async (req, res) => { //checked
     try {
         const comment = await commentService.getCommentByIdService(req.params.id, req.params.userType);

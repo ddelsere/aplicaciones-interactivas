@@ -3,7 +3,7 @@ const sequelize = require('../config/database');
 const User = require('./UserModel');
 const Service = require('./ServiceModel');
 
-// Define the comment model
+
 const Comment = sequelize.define('Comment', {
     message: {
         type: DataTypes.STRING(140),
@@ -44,7 +44,6 @@ const Comment = sequelize.define('Comment', {
     },
 });
 
-// Define associations
 Comment.belongsTo(User, { foreignKey: 'idUser' });
 Comment.belongsTo(Service, { foreignKey: 'idService' });
 

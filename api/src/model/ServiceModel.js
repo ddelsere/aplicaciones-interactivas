@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Provider = require('./providerModel'); // Importa el modelo de Usuario
-const Category = require('./categoryModel');
+const Provider = require('./providerModel'); 
 
 // Defino el Schema
 const Service = sequelize.define('Service', {
@@ -15,13 +14,6 @@ const Service = sequelize.define('Service', {
     },
     price: {
         type: DataTypes.FLOAT,
-        allowNull: false,
-        validate: {
-            min: 0
-        }
-    },
-    duration: {
-        type: DataTypes.FLOAT, // 
         allowNull: false,
         validate: {
             min: 0
@@ -43,13 +35,9 @@ const Service = sequelize.define('Service', {
         type: DataTypes.STRING(10),
         allowNull: false
     },
-    idCategory: {
-        type: DataTypes.INTEGER,
+    category: {
+        type: DataTypes.STRING(50),
         allowNull: false,
-        references: {
-            model: Category,
-            key: 'id'
-        }
     },
     idProvider: {
         type: DataTypes.INTEGER,
@@ -72,9 +60,7 @@ const Service = sequelize.define('Service', {
     }
 });
 
-// Define the relationship
-//Provider.hasMany(Provider, { foreignKey: 'provider_id' });
+
 Service.belongsTo(Provider, { foreignKey: 'idProvider' });
-Service.belongsTo(Category, {foreignKey: "idCategory"})
 
 module.exports = Service;

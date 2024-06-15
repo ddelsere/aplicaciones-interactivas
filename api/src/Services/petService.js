@@ -26,7 +26,6 @@ const getAllPets = async () => {
 // Get a pet by ID
 const getPetByIdUser = async (id) => {
     try {
-        console.log(id)
         const pet = await Pet.findAll({
             include: [User],
             where: {

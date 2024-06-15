@@ -4,7 +4,7 @@ const Service = require('./ServiceModel');
 const User = require('./UserModel');
 const Provider = require('./providerModel');
 
-// Define the booking model
+
 const Booking = sequelize.define('Booking', {
     message: {
         type: DataTypes.STRING(255),
@@ -72,7 +72,7 @@ const Booking = sequelize.define('Booking', {
         }
     }
 });
-// Define associations
+
 Booking.belongsTo(User, { foreignKey: 'idUser' });
 Booking.belongsTo(Service, {foreignKey: 'idService'})
 Booking.belongsTo(Provider, {foreignKey: 'idProvider'});
