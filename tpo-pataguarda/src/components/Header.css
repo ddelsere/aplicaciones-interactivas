@@ -1,0 +1,100 @@
+.header {
+    background-color: #4D6155;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white; /* Color del texto de la marca */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+
+.navbar {
+    background-color: #4D6155;
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    padding: 10px 15px; /* Espaciado interior de los enlaces */
+    display: inline-block; /* Asegura que los enlaces se muestren en línea */
+}
+
+.navbar-nav .nav-link:hover {
+    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
+}
+
+#nombre {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+
+#nombre:hover {
+    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
+}
+
+/* Estilos del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#4D6155;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: white; /* Color del texto de los enlaces dentro del dropdown */
+    padding: 3%;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    display: flex; /* Muestra los enlaces en bloque */
+    justify-content: center;
+}
+
+
+.show {
+    display: block;
+}
+
+.cuenta-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-down {
+    margin-left: 5px;
+}
+.navbar-nav .nav-item {
+    /* Asegura que los elementos no se oculten en pantallas pequeñas */
+    display: inline-block;
+}
+
+
+.navbar-nav .nav-item:first-child {
+    margin-right: 50px; /* Aumenta el margen a la derecha del primer ítem de navegación */
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 10px; /* Ajusta el padding para mejorar el espacio en pantallas pequeñas */
+    }
+
+    .navbar-toggler {
+        display: block; /* Muestra el botón del toggler en pantallas pequeñas */
+    }
+
+    .navbar-collapse {
+        display: none; /* Oculta la barra de navegación colapsada por defecto */
+    }
+
+    .navbar-nav .show .dropdown-content {
+        display: block; /* Muestra el dropdown cuando se abre en pantallas pequeñas */
+    }
+}
