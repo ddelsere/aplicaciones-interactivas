@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:8080/api/v1";
 const BASE_URL_SERVICES = BASE_URL + "/services/";
 
-const parseServices = (servicesFromAPI) => servicesFromAPI.todos;
+const parseServices = (servicesFromAPI) => servicesFromAPI.services;
 const headers = {
   Accept: "application/json",
   "Content-Type": "application/json",
@@ -9,14 +9,19 @@ const headers = {
 
 export const getServices = () =>
     fetch(BASE_URL_SERVICES)
-      .then((services) => services.json())
-      .then(parseServices);
+      .then((services) => services.json());
+export const getServicesByFilter = (filter) =>
+  fetch(BASE_URL_SERVICES, {
+    method: "GET",
+    body: JSON.stringify(filter)
+  }).then((services) => services.json());
+      // .then(parseServices);
   export const createService = (service) =>
     fetch(BASE_URL_SERVICES, {
       method: "POST",
       headers,
       body: JSON.stringify(service),
-    }).then((todo) => todo.json());
+    }).then((service) => service.json());
   export const updateService = (service) =>
     fetch(`${BASE_URL_SERVICES}${service.id}`, {
       method: "PUT",
