@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import ServiceForm from './ServiceForm';
+import ServiceForm from './serviceForm';
+import ServiceCard from './serviceCard';
+import './serviceList.css';
 
-const ServicesList = () => {
+const ServicesList = ({idProvider}) => {
     const [services, setServices] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingServiceId, setEditingServiceId] = useState(null);
 
     const fetchServices = async () => {
         try {
-            const response = await fetch('/api/services');
+            const response = await fetch(`http://localhost:8081/api/v1/services/${idProvider}`);
             const data = await response.json();
             if (response.ok) {
                 setServices(data);
@@ -24,8 +26,9 @@ const ServicesList = () => {
         fetchServices();
     }, []);
 
-    const openModal = (serviceId = null) => {
-        setEditingServiceId(serviceId);
+    const openModal = (service = null) => {
+        console.log(service)
+        setEditingServiceId(service);
         setIsModalOpen(true);
     };
 
@@ -35,19 +38,29 @@ const ServicesList = () => {
         fetchServices();
     };
 
+    const deleteService = async (id) => {
+        const endpoint = `http://localhost:8081/api/v1/services/${id}`
+        const response = await fetch(endpoint, {
+            method: 'DELETE',
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            //lo elimino de la lista
+            fetchServices();
+        }
+    }
+
     return (
-        <div>
-            <h2>Services List</h2>
-            <button onClick={() => openModal()}>Create Service</button>
-            <ul>
+        <div className="services-list">
+            <h2>SERVICIOS ACTIVOS</h2>
+            <button className="add-service-button" onClick={() => openModal()}>AGREGAR NUEVO SERVICIO</button>
+            <div className="services-container">
                 {services.map((service) => (
-                    <li key={service.id}>
-                        {service.name} - {service.description}
-                        <button onClick={() => openModal(service.id)}>Edit</button>
-                    </li>
+                    <ServiceCard key={service.id} service={service} onEdit={openModal} onDelete={deleteService} />
                 ))}
-            </ul>
-            {isModalOpen && <ServiceForm serviceId={editingServiceId} onClose={closeModal} />}
+            </div>
+            {isModalOpen && <ServiceForm idProvider={idProvider} service={editingServiceId} onClose={closeModal} />}
         </div>
     );
 };

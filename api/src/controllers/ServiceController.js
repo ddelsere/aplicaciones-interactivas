@@ -3,6 +3,7 @@ const serviceService = require('../services/ServicesService');
 // Create a new service
 exports.createService = async (req, res) => {
     try {
+        console.log(req.body);
         const service = await serviceService.createService(req.body);
         res.status(201).json(service);
     } catch (error) {

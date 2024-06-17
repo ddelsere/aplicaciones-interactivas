@@ -4,7 +4,9 @@ const Service = require('../model/ServiceModel');
 // Create a new service
 const createService = async (serviceData) => { //checked
     try {
-        const service = await Service.create({...serviceData, active: true});
+        console.log(serviceData)
+
+        const service = await Service.create({...serviceData, active: true, name:serviceData.category});
         return service;
     } catch (error) {
         throw new Error(error.message);

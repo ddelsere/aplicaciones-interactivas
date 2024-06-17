@@ -7,8 +7,12 @@ const bookingRoutes = require('./src/routes/BookingRoute');
 const userRoutes = require('./src/routes/UserRoute');
 const petRoutes = require('./src/routes/PetRoute')
 const sequelize = require('./src/config/database');
-
-app.use(express.json());
+const cors = require("cors");
+app.use(cors("*")) // This Cross Origin Handling
+app.use(express.urlencoded({ extended: true }));
+// This is required to handle urlencoded data
+app.use(express.json()); 
+// This to handle json data coming from requests mainly post
 
 // Use the routes
 app.use('/api/v1', authRoutes);
