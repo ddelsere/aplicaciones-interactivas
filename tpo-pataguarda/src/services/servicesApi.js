@@ -28,7 +28,7 @@ export const getServicesByFilter = (filter) =>
       headers,
       body: JSON.stringify(service),
     });
-  export const deleteTodo = (serviceId) =>
+  export const deleteService = (serviceId) =>
     fetch(`${BASE_URL_SERVICES}${serviceId}`, {
       method: "DELETE",
     });

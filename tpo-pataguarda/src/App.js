@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import dogImage from './assets/images/foto-inicio.jpg'
+import dogImage from './assets/images/foto-inicio.jpg';
+import ServiceForm from'./components/services/serviceForm';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <nav className="container">
           <ul className="nav justify-content-between">
             <li className="nav-item">
-              <a className="nav-link text-white" href="#home">PATAGUARDA</a>
+              <a className="nav-link text-white" href="#home">pata</a>
             </li>
             <li className="nav-item">
               <a className="nav-link text-white" href="#join">¡ÚNETE AL EQUIPO!</a>
@@ -64,6 +65,7 @@ function App() {
           <a className="text-white mx-2" href="#twitter">TW</a>
         </div>
       </footer>
+      {/* <ServiceForm/> */}
     </div>
   );
 }
