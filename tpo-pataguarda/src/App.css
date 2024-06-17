@@ -1,87 +1,104 @@
-.App {
-    font-family: Arial, sans-serif;
-  }
-   
-  .App-header {
-    background-color: #4CAF50;
-    padding: 10px 20px;
-  }
-   
-  .App-header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero .hero-image {
+  width: 100%;
+  height: auto;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -50px;
+}
+
+.service {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px;
+}
+
+.service img {
+  width: 50px;
+  height: 50px;
+}
+
+.service-description {
+  margin-top: 20px;
+}
+
+.cta-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #218838;
+}
+
+.why-pataguarda {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reason {
+  max-width: 600px;
+  margin: 10px 0;
+}
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .reasons {
+    flex-direction: row;
     justify-content: space-between;
   }
-   
-  .App-header nav ul li {
-    display: inline;
-  }
-   
-  .App-header nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-   
-  .hero {
-    text-align: center;
-    margin: 20px 0;
-  }
-   
-  .hero img {
-    max-width: 100%;
-    height: auto;
-  }
-   
-  .hero-text {
-    background-color: #ffebcd;
-    padding: 20px;
-    border-radius: 10px;
-  }
-   
-  .hero-text button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-   
-  .why-choose-us {
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
-   
-  .why-choose-us h2 {
-    text-align: center;
-  }
-   
-  .features {
-    display: flex;
-    justify-content: space-around;
-  }
-   
-  .feature {
-    width: 30%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-   
-  .feature .icon {
-    font-size: 50px;
-  }
-   
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-   
-  footer .social-icons a {
-    color: white;
+
+  .reason {
     margin: 0 10px;
-    text-decoration: none;
   }
+}
