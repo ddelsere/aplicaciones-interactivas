@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
-
 
 function Header() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -12,22 +12,22 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg">
-        <a className="navbar-brand" href="#" id="nombre">PATAGUARDA</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <Link className="navbar-brand" to="/" id="nombre">PATAGUARDA</Link>
+        <button className="navbar-toggler" type="button" onClick={toggleDropdown} aria-controls="navbarNav" aria-expanded={dropdownVisible} aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${dropdownVisible ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="../pages/servicios">¡ÚNETE AL EQUIPO!</a>
+              <Link className="nav-link" to="/pages/servicios">¡ÚNETE AL EQUIPO!</Link>
             </li>
             <li className="nav-item dropdown">
               <button className="nav-link cuenta-btn" onClick={toggleDropdown}>
                 MI CUENTA <span className="arrow-down">&#9662;</span>
               </button>
               <div className={`dropdown-content ${dropdownVisible ? 'show' : ''}`}>
-                <a href="#">Iniciar sesión</a>
-                <a href="#">Registrarse</a>
+                <Link to="/login">Iniciar sesión</Link>
+                <Link to="/register">Registrarse</Link>
               </div>
             </li>
           </ul>
