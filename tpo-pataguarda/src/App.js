@@ -4,6 +4,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Servicios from './pages/servicios';
+import ServiciosProvider from './components/services/servicesListProvider';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/pages/servicios" element={<Servicios />} />
           
         </Routes>
+        
         <Footer />
       </div>
     </Router>

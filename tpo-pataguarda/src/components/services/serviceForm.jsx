@@ -110,64 +110,68 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
 
     return (
         <div className="modal">
-            <div className="modal-content">
-                <button type="button" onClick={onClose}>×</button>
-                <h2>{service ? 'Update Service' : 'Nuevo servicio'}</h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="category">Categoria</label>
-                        <select name="category" value={formState.category} onChange={handleChange}>
-                            <option value="">Seleccione una categoria</option>
-                            <option value="Paseo">Paseo</option>
-                            <option value="Adiestramiento">Adiestramiento</option>
-                            <option value="Cuidado domestico">Cuidado domestico</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="price">Costo</label>
-                        <input type="number" name="price" placeholder="Costo" value={formState.price} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="startDate">Fecha inicio</label>
-                        <input type="date" name="startDate" placeholder="Fecha inicio" value={formState.startDate} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="finishDate">Fecha fin</label>
-                        <input type="date" name="finishDate" placeholder="Fecha fin" value={formState.finishDate} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="frequency">Frecuencia</label>
-                        <select name="frequency" value={formState.frequency} onChange={handleChange}>
-                            <option value="">Seleccione la frecuencia</option>
-                            <option value="Diario">Diario</option>
-                            <option value="Semanal">Semanal</option>
-                            <option value="Mensual">Mensual</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="zone">Zona</label>
-                        <select name="zone" value={formState.zone} onChange={handleChange}>
-                            <option value="">Seleccione la zona</option>
-                            <option value="Caballito">Caballito</option>
-                            <option value="Palermo">Palermo</option>
-                            <option value="Floresta">Floresta</option>
-                            <option value="Belgrano">Belgrano</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Especie</label>
-                        <input type="radio" name="species" value="Gato" checked={formState.species === 'Gato'} onChange={handleChange} /> Gato
-                        <input type="radio" name="species" value="Perro" checked={formState.species === 'Perro'} onChange={handleChange} /> Perro
-                    </div>
-                    <div>
-                        <label htmlFor="description">Descripcion</label>
-                        <textarea name="description" placeholder="Descripcion" value={formState.description} onChange={handleChange} />
-                    </div>
-                    <button type="submit">{service ? 'Modificar servicicio' : 'Agregar'}</button>
-                </form>
-                <p>{formState.message}</p>
+    <div className="modal-content">
+        <button type="button" onClick={onClose}>×</button>
+        <h2>{service ? 'Update Service' : 'Nuevo servicio'}</h2>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="category">Categoria</label>
+                <select name="category" value={formState.category} onChange={handleChange}>
+                    <option value="">Seleccione una categoria</option>
+                    <option value="Paseo">Paseo</option>
+                    <option value="Adiestramiento">Adiestramiento</option>
+                    <option value="Cuidado domestico">Cuidado domestico</option>
+                </select>
             </div>
-        </div>
+            <div>
+                <label htmlFor="price">Costo</label>
+                <input type="number" name="price" placeholder="Costo" value={formState.price} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="startDate">Fecha inicio</label>
+                <input type="date" name="startDate" placeholder="Fecha inicio" value={formState.startDate} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="finishDate">Fecha fin</label>
+                <input type="date" name="finishDate" placeholder="Fecha fin" value={formState.finishDate} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="frequency">Frecuencia</label>
+                <select name="frequency" value={formState.frequency} onChange={handleChange}>
+                    <option value="">Seleccione la frecuencia</option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Mensual">Mensual</option>
+                </select>
+            </div>
+            <div>
+                <label htmlFor="zone">Zona</label>
+                <select name="zone" value={formState.zone} onChange={handleChange}>
+                    <option value="">Seleccione la zona</option>
+                    <option value="Caballito">Caballito</option>
+                    <option value="Palermo">Palermo</option>
+                    <option value="Floresta">Floresta</option>
+                    <option value="Belgrano">Belgrano</option>
+                </select>
+            </div>
+            <div className="full-width">
+                <label>Especie</label>
+                <div className="radio-group">
+                    <input type="radio" name="species" value="Gato" checked={formState.species === 'Gato'} onChange={handleChange} /> Gato
+                    <input type="radio" name="species" value="Perro" checked={formState.species === 'Perro'} onChange={handleChange} /> Perro
+                </div>
+            </div>
+            <div className="full-width">
+                <label htmlFor="description">Descripcion</label>
+                <textarea name="description" placeholder="Descripcion" value={formState.description} onChange={handleChange} />
+            </div>
+            <button type="submit">{service ? 'Modificar servicicio' : 'Agregar'}</button>
+        </form>
+        <p>{formState.message}</p>
+    </div>
+</div>
+
+
     );
 };
 

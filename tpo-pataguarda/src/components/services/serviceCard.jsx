@@ -22,10 +22,6 @@ const ServiceCard = ({ service, onEdit, onDelete }) => {
                     <p><strong>Frecuencia</strong></p>
                     <p>{service.frequency}</p>
                 </div>
-                <div>
-                    <p><strong>Duracion</strong></p>
-                    <p>{service.duration}</p>
-                </div>
             </div>
             <div className="service-actions">
                 <a href="#">Ver comentarios</a>

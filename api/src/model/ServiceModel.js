@@ -39,6 +39,20 @@ const Service = sequelize.define('Service', {
         type: DataTypes.STRING(50),
         allowNull: false,
     },
+    startDate: {
+        type: DataTypes.STRING(10),
+        allowNull: false,
+        validate: {
+            isDate: true
+        }
+    },
+    finishDate: {
+        type: DataTypes.STRING(10),
+        allowNull: false,
+        validate: {
+            isDate: true
+        }
+    },
     idProvider: {
         type: DataTypes.INTEGER,
         allowNull: false,
