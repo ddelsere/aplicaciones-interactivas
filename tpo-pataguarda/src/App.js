@@ -4,7 +4,9 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Servicios from './pages/servicios';
-import ServiciosProvider from './components/services/servicesListProvider';
+import LoginPage from './pages/login';
+import ResetPassword from './components/login/resetPassword';
+import ServiciosProvider from './pages/servicesProvider';
 
 function App() {
   return (
@@ -12,12 +14,16 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route exact path="/" element={<MainContent />} />
+          <Route path="/" element={<MainContent />} />
           <Route path="/pages/servicios" element={<Servicios />} />
           
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path='/services-provider' element={<ServiciosProvider />} />
         </Routes>
         
         <Footer />
+        
       </div>
     </Router>
   );
