@@ -163,7 +163,7 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
                         <label htmlFor="description">Descripcion</label>
                         <textarea name="description" placeholder="Descripcion" value={formState.description} onChange={handleChange} />
                     </div>
-                    <button type="submit">{service ? 'Update Service' : 'Agregar'}</button>
+                    <button type="submit">{service ? 'Modificar servicicio' : 'Agregar'}</button>
                 </form>
                 <p>{formState.message}</p>
             </div>
