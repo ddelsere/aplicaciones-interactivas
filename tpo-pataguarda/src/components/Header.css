@@ -16,8 +16,8 @@
 .navbar-nav .nav-link {
     color: white; /* Color del texto de los enlaces */
     text-decoration: none; /* Elimina el subrayado por defecto */
-    padding: 10px 15px; /* Espaciado interior de los enlaces */
-    display: inline-block; /* Asegura que los enlaces se muestren en línea */
+    
+    
 }
 
 .navbar-nav .nav-link:hover {
@@ -27,6 +27,9 @@
 #nombre {
     color: white;
     text-decoration: none; /* Elimina el subrayado por defecto */
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nombre:hover {
@@ -71,14 +74,13 @@
 .arrow-down {
     margin-left: 5px;
 }
-.navbar-nav .nav-item {
-    /* Asegura que los elementos no se oculten en pantallas pequeñas */
-    display: inline-block;
-}
+
 
 
 .navbar-nav .nav-item:first-child {
     margin-right: 50px; /* Aumenta el margen a la derecha del primer ítem de navegación */
+    margin-top: 3%;
+    
 }
 
 @media (max-width: 768px) {

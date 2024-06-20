@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchFilter from '../components/SearchFilte';
+
 
 function Servicios() {
   return (
-    <SearchFilter></SearchFilter>
+    <h1>ACA VA LO DE UNETE AL EQUIPO</h1>
   );
 }
 

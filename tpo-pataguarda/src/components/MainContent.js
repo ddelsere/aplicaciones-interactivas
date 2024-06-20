@@ -23,48 +23,45 @@ function MainContent() {
           <h2 className="text-center mb-4">¿Por qué Pataguarda?</h2>
           <div className="reasons">
             <div className='parte1'>
-              <div className="reason 1">
-                <h3>Siempre aquí para ti</h3>
+            <h3>Siempre aquí para ti</h3>
+              <div className="reason1">
+                
                 <p>Cuando necesites paseos diarios, estés planeando un viaje, atrapado en el trabajo o simplemente quieras que tu mejor amigo tenga compañía; ofrecemos cuidado cualquier día, en cualquier momento.</p>
-              </div>
-              <div className="reason 2">
-                <h3>La seguridad es lo primero</h3>
-                <p>Todos nuestros cuidadores de mascotas pasan por una exhaustiva verificación de antecedentes, y nuestros servicios están completamente asegurados para tu tranquilidad.</p>
-              </div>
-              <div className="reason 3">
-                <h3>Encaja a la perfección contigo</h3>
-                <p>Compara múltiples opciones al instante, reserve en línea de manera conveniente, reciba actualizaciones diarias con fotos y chat, y disfrute de un servicio de atención al cliente siempre disponible.</p>
-              </div>
-            </div>
-            <div className='parte2'>
-              <img src={foto_huellas} alt="foto huellas" className="paws"/>
-              <img src={foto_huellas} alt="foto huellas" className="paws"/>
-              <img src={foto_huellas} alt="foto huellas" className="paws"/>
-              <img src={foto_huellas} alt="foto huellas" className="paws"/>
-            </div>
-            <div className='parte3'> 
-              <img
+                <img src={foto_huellas} alt="foto huellas" className="paws"/>
+                <img
                 className="ayuda-icon"
                 loading="lazy"
                 alt=""
                 src={foto_ayudar}
               />
-
-              <img
-                className="segu-icon"
+              </div>
+            <h3>La seguridad es lo primero</h3>
+              <div className="reason2">
+                
+                <p>Todos nuestros cuidadores de mascotas pasan por una exhaustiva verificación de antecedentes, y nuestros servicios están completamente asegurados para tu tranquilidad.</p>
+                <img src={foto_huellas} alt="foto huellas" className="paws"/>
+                <img
+                className="ayuda-icon"
                 loading="lazy"
                 alt=""
                 src={foto_seguro}
               />
-
-              <img
-                className="enca-icon"
+              </div>
+              
+            <h3>Encaja a la perfección contigo</h3>
+              <div className="reason3">
+                
+                <p>Compare múltiples opciones al instante, reserve en línea de manera conveniente, reciba actualizaciones diarias con fotos y chat, y disfrute de un servicio de atención al cliente siempre disponible.</p>
+                <img src={foto_huellas} alt="foto huellas" className="paws"/>
+                <img
+                className="ayuda-icon"
                 loading="lazy"
                 alt=""
                 src={foto_encaje}
               />
-              
+              </div>
             </div>
+            
           </div>
         </div>
       </section>
