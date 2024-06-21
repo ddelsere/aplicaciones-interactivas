@@ -70,19 +70,7 @@ const updateBooking = async (id, updateData) => { //checked, solo se actualiza e
     }
 };
 
-// Delete a booking
-// const deleteBooking = async (id) => {
-//     try {
-//         const booking = await Booking.findByPk(id);
-//         if (!booking) {
-//             throw new Error('Booking not found');
-//         }
-//         await booking.destroy();
-//         return { message: 'Booking deleted successfully' };
-//     } catch (error) {
-//         throw new Error(error.message);
-//     }
-// };
+
 
 module.exports = {
     createBooking,

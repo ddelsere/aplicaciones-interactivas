@@ -20,10 +20,12 @@ exports.getAllComments = async (req, res) => { //no se usa
     }
 };
 
-// Get a comment by ID
+// Get a comment by ID service
 exports.getCommentByIdService = async (req, res) => { //checked
     try {
+        console.log("get comments by id service");
         const comment = await commentService.getCommentByIdService(req.params.id, req.params.userType);
+        // console.log(comment)
         res.status(200).json(comment);
     } catch (error) {
         res.status(404).json({ error: error.message });

@@ -1,13 +1,10 @@
 const User = require('../model/UserModel');
 const Provider = require('../model/providerModel');
-// const bcrypt = require('bcrypt');
 
-//TODO: VER QUE HACER CON LA PASSWORD A VER SI SE ENCRIPTA O ALGO
 
 // Create a new user
 const createUser = async (userData) => { //checked
     try {
-        // const hashedPassword = await bcrypt.hash(userData.password, 10);
         const user = await User.create({ ...userData});
         
         if(userData.type == "P"){

@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./UserModel');
 
-// Define the provider model
+
 const Provider = sequelize.define('Provider', {
     description_experience: {
         type: DataTypes.STRING,
@@ -25,7 +25,7 @@ const Provider = sequelize.define('Provider', {
     },
 });
 
-// Define associations
+
 Provider.belongsTo(User, { foreignKey: 'idUser' });
 
 module.exports = Provider;

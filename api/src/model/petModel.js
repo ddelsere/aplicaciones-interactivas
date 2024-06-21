@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./UserModel');
 
-// Define the pet model
+
 const Pet = sequelize.define('Pet', {
     name: {
         type: DataTypes.STRING,
@@ -28,7 +28,7 @@ const Pet = sequelize.define('Pet', {
     },
 });
 
-// Define associations
+
 Pet.belongsTo(User, { foreignKey: 'idUser' });
 
 module.exports = Pet;

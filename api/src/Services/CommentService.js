@@ -23,7 +23,7 @@ const createComment = async (commentData) => {
     }
 };
 
-// Function to calculate the average score for a specific idService
+// funcion aux para calcular el promedio del score del servicio basandose en los score de los comentarios
 async function calculateAverageScore(idService) {
     try {
         const result = await Comment.findAll({
@@ -62,15 +62,18 @@ const getCommentByIdService = async (id, userType) => {
                 where: {
                     idService: id,
                     status: 'ACEPTADO'
-                }
+                },
+                include: [User]
             });            
             return comments;
         }else{
             const comments = await Comment.findAll({
                 where: {
                     idService: id
-                }
-            });            
+                },
+                include: [User]
+            });   
+            console.log(comments);         
             return comments;
         }
     } catch (error) {
@@ -93,19 +96,7 @@ const updateComment = async (id, updateData) => {
     }
 };
 
-// Delete a comment
-// const deleteComment = async (id) => {
-//     try {
-//         const comment = await Comment.findByPk(id);
-//         if (!comment) {
-//             throw new Error('Comment not found');
-//         }
-//         await comment.destroy();
-//         return { message: 'Comment deleted successfully' };
-//     } catch (error) {
-//         throw new Error(error.message);
-//     }
-// };
+
 
 module.exports = {
     createComment,
