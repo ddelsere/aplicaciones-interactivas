@@ -1,11 +1,11 @@
 const Service = require('../model/ServiceModel');
-
+const Provider = require('../model/providerModel');
+const User = require('../model/UserModel');
 
 // Create a new service
 const createService = async (serviceData) => { //checked
     try {
         console.log(serviceData)
-
         const service = await Service.create({...serviceData, active: true, name:serviceData.category});
         return service;
     } catch (error) {
@@ -48,7 +48,7 @@ const getServiceByIdProvider = async (id) => { //checked
 
 const getServiceByFilter = async (filter) => {
     try {
-        
+        console.log(filter.category);
         const whereClause = {};
 
         if (filter.category !== undefined) {
@@ -78,16 +78,27 @@ const getServiceByFilter = async (filter) => {
         const services = await Service.findAll({
             where: whereClause
         });
+        let res = []
+       for(const service of services)  {
+       
+            const provider =  await Provider.findByPk(service.idProvider, {include: [User]})
+            let data = {service: service, user: provider.User.dataValues};
+            res.push(data);
+        };
 
+        
         if (!services) {
             throw new Error('Services not found');
         }
-        return services;
+        
+        return res;
     } catch (error) {
         throw new Error(error.message);
     }
 };
+const getUser = async (services, idProvider) => {
 
+}
 // Update a service
 const updateService = async (id, updateData) => { //checked
     try {

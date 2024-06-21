@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
@@ -7,8 +7,14 @@ import Servicios from './pages/servicios';
 import LoginPage from './pages/login';
 import ResetPassword from './components/login/resetPassword';
 import ServiciosProvider from './pages/servicesProvider';
+import CommentsModalProvider from './components/comments/commentsProvider';
+import Booking from './pages/bookingUserInfo';
+import ServicesFilter from './components/filter/cards';
+import Filter from './pages/filter';
 
 function App() {
+
+  
   return (
     <Router>
       <div>
@@ -20,8 +26,16 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path='/services-provider' element={<ServiciosProvider />} />
+          <Route path='/booking'  element={<Booking/>}/>
+          <Route path='/filter' element={<Filter/>}  />
         </Routes>
         
+        {/* <ServiciosProvider idProvider={1} /> */}
+
+      {/* <ServicesFilter/> */}
+
+        
+
         <Footer />
         
       </div>

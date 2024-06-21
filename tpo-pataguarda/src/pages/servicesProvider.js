@@ -6,9 +6,9 @@ import ServicesList from '../components/services/servicesListProvider';
 function ServiciosProvider({idProvider}) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <ServicesList idProvider={idProvider} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

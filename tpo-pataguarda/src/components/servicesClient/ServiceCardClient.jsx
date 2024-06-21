@@ -1,12 +1,14 @@
 import React from 'react';
-import './serviceCard.css';
-import { useState } from 'react';
+import '../services/serviceCard.css';
+import { useState, useEffect } from 'react';
 import CommentsModalProvider from '../comments/commentsProvider'; 
 
-const ServiceCard = ({ service, onEdit, onDelete }) => {
+const ServiceCardBooking = ({ title, service}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedServiceId, setSelectedServiceId] = useState(null);
+
+    
   
     const openModal = (selectedServiceId) => {
       setSelectedServiceId(selectedServiceId);
@@ -18,9 +20,13 @@ const ServiceCard = ({ service, onEdit, onDelete }) => {
       setSelectedServiceId(null);
     };
 
+    const onSolicitar = () => {
+        //TODO: que abra el modal de solicitar
+    }
+
     return (
         <div className="service-card">
-            <h3>SERVICIOS ACTIVOS</h3>
+            <h3>{title}</h3>
             <div className="service-details">
                 <div>
                     <p><strong>Categoria</strong></p>
@@ -45,8 +51,7 @@ const ServiceCard = ({ service, onEdit, onDelete }) => {
             </div>
             <div className="service-actions">
                 <a href="#" onClick={() => openModal(service.id)} >Ver comentarios</a>
-                <a href="#" onClick={() => onDelete(service.id)}>Eliminar</a>
-                <a href="#" onClick={() => onEdit(service)}>Modificar</a>
+                <button onClick={onSolicitar}>SOLICITAR</button>
             </div>
             {isModalOpen && (
         <CommentsModalProvider
@@ -59,4 +64,4 @@ const ServiceCard = ({ service, onEdit, onDelete }) => {
     );
 };
 
-export default ServiceCard;
+export default ServiceCardBooking;

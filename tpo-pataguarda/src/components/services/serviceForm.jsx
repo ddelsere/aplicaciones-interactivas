@@ -112,7 +112,7 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
         <div className="modal">
     <div className="modal-content">
         <button type="button" onClick={onClose}>×</button>
-        <h2>{service ? 'Update Service' : 'Nuevo servicio'}</h2>
+        <h2>{service ? 'Modificar servicio' : 'Nuevo servicio'}</h2>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="category">Categoria</label>
@@ -139,9 +139,10 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
                 <label htmlFor="frequency">Frecuencia</label>
                 <select name="frequency" value={formState.frequency} onChange={handleChange}>
                     <option value="">Seleccione la frecuencia</option>
-                    <option value="Diario">Diario</option>
+                    <option value="Diario">Diaria</option>
                     <option value="Semanal">Semanal</option>
                     <option value="Mensual">Mensual</option>
+                    <option value="Unica">Unica</option>
                 </select>
             </div>
             <div>

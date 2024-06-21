@@ -62,15 +62,18 @@ const getCommentByIdService = async (id, userType) => {
                 where: {
                     idService: id,
                     status: 'ACEPTADO'
-                }
+                },
+                include: [User]
             });            
             return comments;
         }else{
             const comments = await Comment.findAll({
                 where: {
                     idService: id
-                }
-            });            
+                },
+                include: [User]
+            });   
+            console.log(comments);         
             return comments;
         }
     } catch (error) {
