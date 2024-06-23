@@ -15,16 +15,19 @@ const Login = () => {
     try {
       const response = await fetch(`http://localhost:8081/api/v1/login?email=${email}&password=${password}`);
       const data = await response.json();
+      console.log(data);
       if (!response.ok) {
         throw new Error('Login failed');
       }
-      console.log(data);
-      setMessage(`Welcome, ${data.name}!`);
-      if(data.type === "P"){
+
+
+      if (data.User.type === "P") {
         //redirect to profile
-      }else{
-        //redirect to home, ver como pasarle la data de que se logueo como cliente para qe le aparezca el header de clientes
-            navigate('/');
+        console.log(data);
+        navigate('/services-provider', { state: { idProvider: data.id } })
+      } else {
+        //redirect to home
+        navigate('/filter', { state: { idClient: data.id } });
       }
 
     } catch (error) {
@@ -34,7 +37,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      
+
       <div>
         <h1>Bienvenido a Pataguarda</h1>
         <h2>Inicia Sesión</h2>
@@ -60,14 +63,14 @@ const Login = () => {
             />
           </div>
           <div className="forgot-password">
-          <Link to="/reset-password">Olvide mi contraseña</Link>
+            <Link to="/reset-password">Olvide mi contraseña</Link>
           </div>
           <button type="submit">Ingresar</button>
         </form>
         {error && <p className="error">{error}</p>}
         {message && <p className="message">{message}</p>}
       </div>
-      
+
     </div>
   );
 };

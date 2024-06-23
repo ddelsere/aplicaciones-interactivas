@@ -2,25 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './cards.css';
 
-const ServicesFilter = () => {
+const ServicesFilter = (idClient, filtro) => {
     const [services, setServices] = useState([]);
     const [error, setError] = useState(null);
+    const startDate = filtro.startDate;
+    const finishDate = filtro.finishDate;
 
     useEffect(() => {
         const fetchServices = async () => {
-            const filter = {
-                // price: 50000,
-                // frequency: "Diario",
-                // zone: "Caballito",
-                // score: null,
-                // species: "PERRO",
-                category: "Paseo",
-                // startDate: "06-13-2024",
-                // finishDate: "07-30-2024"
-            };
+            // const filter = {
+            //     // price: 50000,
+            //     // frequency: "Diario",
+            //     // zone: "Caballito",
+            //     // score: null,
+            //     // species: "PERRO",
+            //     category: "Paseo",
+            //     // startDate: "06-13-2024",
+            //     // finishDate: "07-30-2024"
+            // };
 
             try {
-                const queryString = new URLSearchParams(filter).toString();
+                const queryString = new URLSearchParams(filtro).toString();
                 const response = await fetch(`http://localhost:8081/api/v1/services/?${queryString}`, {
                     method: 'GET'
                     
@@ -31,7 +33,6 @@ const ServicesFilter = () => {
                 }
 
                 const data = await response.json();
-                // console.log(data);
                 setServices(data);
             } catch (err) {
                 setError(err.message);
@@ -42,20 +43,20 @@ const ServicesFilter = () => {
     }, []);
 
     return (
-        <div className="services-container">
+        <div className="services-container-filter">
             {error && <p>{error}</p>}
             {services.length === 0 ? (
                 <p>Loading...</p>
             ) : (
                 services.map(({ service, user }) => (
-                    <div key={service.id} className="service-card">
+                    <div key={service.id} className="service-card-filter">
                         <div className="profile-picture"></div>
                         <h2>{`${user.name} ${user.surname}`}</h2>
                         <p className="category">Categoria: <span>{service.category}</span></p>
                         <div className="rating">
-                            {'⭐'.repeat(service.score)}
+                            {service.score ? '⭐'.repeat(service.score) : 'Sin calificación'}
                         </div>
-                        <Link to={`/booking?serviceId=${service.id}&userId=${user.id}`}  className="info-link">+ Info</Link>
+                        <Link to={'/booking'} state={{ service, user, idClient, startDate, finishDate }} className="info-link">+ Info</Link>
                     </div>
                 ))
             )}

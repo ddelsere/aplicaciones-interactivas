@@ -4,7 +4,7 @@ const Service = require('../model/ServiceModel');
 // Create a new service
 exports.createService = async (req, res) => {
     try {
-        console.log(req.body);
+        
         const service = await serviceService.createService(req.body);
         res.status(201).json(service);
     } catch (error) {
@@ -13,7 +13,7 @@ exports.createService = async (req, res) => {
 };
 
 exports.getServiceId = async(req, res) => { //BORRAR!
-    console.log(req.params.id);
+    
     const service = await Service.findByPk(req.params.id);
     res.status(200).json(service);
 }
@@ -21,7 +21,7 @@ exports.getServiceId = async(req, res) => { //BORRAR!
 // Get all services
 exports.getAllServices = async (req, res) => { //BY FILTER
     try {
-        console.log(req.query);
+        
         const services = await serviceService.getServiceByFilter(req.query);
         res.status(200).json(services);
     } catch (error) {
@@ -31,7 +31,7 @@ exports.getAllServices = async (req, res) => { //BY FILTER
 
 // Get a service by ID
 exports.getServiceByIdProvider = async (req, res) => {
-    console.log('get service by id')
+    
     try {
         const service = await serviceService.getServiceByIdProvider(req.params.id_provider);
         res.status(200).json(service);

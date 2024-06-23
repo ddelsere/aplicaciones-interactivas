@@ -23,7 +23,7 @@ exports.getAllComments = async (req, res) => { //no se usa
 // Get a comment by ID service
 exports.getCommentByIdService = async (req, res) => { //checked
     try {
-        console.log("get comments by id service");
+        console.log(req.params)
         const comment = await commentService.getCommentByIdService(req.params.id, req.params.userType);
         // console.log(comment)
         res.status(200).json(comment);
@@ -35,6 +35,7 @@ exports.getCommentByIdService = async (req, res) => { //checked
 // Update a comment
 exports.updateComment = async (req, res) => { //checked
     try {
+        console.log(req.body)
         const comment = await commentService.updateComment(req.params.id, req.body);
         res.status(200).json(comment);
     } catch (error) {
