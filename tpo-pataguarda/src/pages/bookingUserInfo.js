@@ -3,23 +3,23 @@ import React from 'react';
 import UserInfo from '../components/servicesClient/UserInfoBooking';
 import ServiceCardBooking from '../components/servicesClient/ServiceCardClient';
 import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
 
 function Booking() {
-//     const location = useLocation();
-//   const { service, user } = location.state || {};
-const { userId, serviceId } = useParams();
-    console.log(userId);
-    console.log(serviceId);
 
-  return (
-    <div>
-      
-      <UserInfo user={userId} />
-      {/* <ServiceCardBooking title={user.name + ' ' + user.surname} service={service} /> */}
-      
-    </div>
-  );
+
+    const location = useLocation();
+    console.log('estoy en Booking')
+    const { service, user, idClient, startDate, finishDate } = location.state || {};
+    console.log(user);
+    return (
+        <div style={{ backgroundColor: "#2E3B32", paddingBottom: "1%" }}>
+
+            <UserInfo user={user} />
+            <ServiceCardBooking title={user.name + ' ' + user.surname} service={service} idUser={idClient} startDate={startDate} finishDate={finishDate} />
+
+        </div>
+    );
 }
 
 export default Booking;

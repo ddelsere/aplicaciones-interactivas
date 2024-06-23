@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ServiceForm from './serviceForm';
 import ServiceCard from './serviceCard';
 import './serviceList.css';
-import CommentsModalProvider from '../comments/commentsProvider'; 
 
 const ServicesList = ({idProvider}) => {
     const [services, setServices] = useState([]);
     const [isModalCreateUpdateOpen, setIsModalCreateUpdateOpen] = useState(false);
     const [editingServiceId, setEditingServiceId] = useState(null);
-    // const [isModalCommentsOpen, setIsModalCommentsOpen] = useState(false);
-    // const [selectedCommentId, setSelectedCommentId] = useState(null);
+
 
     const fetchServices = async () => {
         try {
@@ -41,15 +39,7 @@ const ServicesList = ({idProvider}) => {
         fetchServices();
     };
 
-    // const openModalComments = (commentId) => {
-    //     setSelectedCommentId(commentId);
-    //     setIsModalCreateUpdateOpen(true);
-    //   };
-    
-    //   const closeModalComments = () => {
-    //     setIsModalCreateUpdateOpen(false);
-    //     setSelectedCommentId(null);
-    //   };
+
 
     const deleteService = async (id) => {
         const endpoint = `http://localhost:8081/api/v1/services/${id}`
@@ -59,7 +49,6 @@ const ServicesList = ({idProvider}) => {
 
         const data = await response.json();
         if (response.ok) {
-            //lo elimino de la lista
             fetchServices();
         }
     }

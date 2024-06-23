@@ -26,8 +26,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path='/services-provider' element={<ServiciosProvider />} />
+          <Route path='/filter' element={<Filter/> }  />
           <Route path='/booking'  element={<Booking/>}/>
-          <Route path='/filter' element={<Filter/>}  />
         </Routes>
         
         {/* <ServiciosProvider idProvider={1} /> */}

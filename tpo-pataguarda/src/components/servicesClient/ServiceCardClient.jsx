@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../services/serviceCard.css';
-import { useState, useEffect } from 'react';
-import CommentsModalProvider from '../comments/commentsProvider'; 
+import CommentsModalClient from '../comments/CommentsModalClient';
+import FormBooking from './FormBooking';
 
-const ServiceCardBooking = ({ title, service}) => {
+const ServiceCardBooking = ({ idUser, title, service, startDate, finishDate, userType }) => {
+    console.log(idUser);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalBookingsOpen, setIsBookingCommentsOpen] = useState(false);
     const [selectedServiceId, setSelectedServiceId] = useState(null);
-
-    
-  
-    const openModal = (selectedServiceId) => {
-      setSelectedServiceId(selectedServiceId);
-      setIsModalOpen(true);
-    };
-  
-    const closeModal = () => {
-      setIsModalOpen(false);
-      setSelectedServiceId(null);
-    };
+    const [isCommentsModalOpen, setIsCommentsModalOpen] = useState(false);
 
     const onSolicitar = () => {
-        //TODO: que abra el modal de solicitar
+        setSelectedServiceId(selectedServiceId);
+        setIsBookingCommentsOpen(true);
+    }
+
+    const closeSolicitar = () => {
+        setIsBookingCommentsOpen(false);
+        setSelectedServiceId(null);
+    }
+
+    const openCommentsModal = () => {
+        setIsCommentsModalOpen(true);
+    }
+
+    const closeCommentsModal = () => {
+        setIsCommentsModalOpen(false);
     }
 
     return (
-        <div className="service-card">
+        <div className="service-card-client">
             <h3>{title}</h3>
             <div className="service-details">
                 <div>
@@ -46,20 +50,32 @@ const ServiceCardBooking = ({ title, service}) => {
                 </div>
                 <div>
                     <p><strong>Calificacion</strong></p>
-                    <p>{'★'.repeat(service.score)}</p>
+                    <p>{'⭐'.repeat(service.score)}</p>
                 </div>
             </div>
-            <div className="service-actions">
-                <a href="#" onClick={() => openModal(service.id)} >Ver comentarios</a>
-                <button onClick={onSolicitar}>SOLICITAR</button>
+            <div className="service-actions-client">
+                <span className="comments-link" onClick={openCommentsModal}>Ver comentarios</span>
+                <button className='custom-button' onClick={onSolicitar}>SOLICITAR</button>
             </div>
-            {isModalOpen && (
-        <CommentsModalProvider
-          idService={service.id}
-          userType="P"
-          onClose={closeModal}
-        />
-      )}
+
+            {isModalBookingsOpen && (
+                <FormBooking 
+                    service={service} 
+                    idUser={idUser} 
+                    onClose={closeSolicitar} 
+                    startDate={startDate} 
+                    finishDate={finishDate} 
+                />
+            )}
+
+            {isCommentsModalOpen && (
+                <CommentsModalClient 
+                    idUser={idUser} 
+                    idService={service.id} 
+                    userType={'C'} 
+                    onClose={closeCommentsModal} 
+                />
+            )}
         </div>
     );
 };

@@ -1,14 +1,15 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ServicesList from '../components/services/servicesListProvider';
 
-function ServiciosProvider({idProvider}) {
+import ServicesList from '../components/services/servicesListProvider';
+import { useLocation } from 'react-router-dom';
+
+function ServiciosProvider() {
+  const location = useLocation();
+  const { idProvider } = location.state || {};
+
   return (
     <div>
-      {/* <Header /> */}
       <ServicesList idProvider={idProvider} />
-      {/* <Footer /> */}
     </div>
   );
 }

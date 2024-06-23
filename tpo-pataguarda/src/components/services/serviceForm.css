@@ -68,7 +68,7 @@
 
 .modal-content button[type="submit"] {
     grid-column: span 2;
-    background-color: #4caf50;
+    background-color: #475847;
     color: white;
     border: none;
     padding: 0.75em;
@@ -79,7 +79,7 @@
 }
 
 .modal-content button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #5B875B;
 }
 
 .modal-content button[type="button"] {

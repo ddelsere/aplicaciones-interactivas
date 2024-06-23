@@ -3,6 +3,7 @@ const bookingService = require('../services/BookingService.js');
 // Create a new booking
 exports.createBooking = async (req, res) => { //checked
     try {
+        console.log(req.body)
         const booking = await bookingService.createBooking(req.body);
         res.status(201).json(booking);
     } catch (error) {

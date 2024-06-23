@@ -27,20 +27,21 @@ const Booking = sequelize.define('Booking', {
     },
     startDate: {
         type: DataTypes.STRING(10),
-        allowNull: false,
+        allowNull: true,
         validate: {
             isDate: true
         }
     },
     finishDate: {
         type: DataTypes.STRING(10),
-        allowNull: false,
+        allowNull: true,
         validate: {
             isDate: true
         }
     },
     idService: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: Service,
             key: 'id'
@@ -48,6 +49,7 @@ const Booking = sequelize.define('Booking', {
     },
     idUser: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: User,
             key: 'id'
@@ -55,6 +57,7 @@ const Booking = sequelize.define('Booking', {
     },
     idProvider: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: Provider,
             key: 'id'

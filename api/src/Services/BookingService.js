@@ -4,6 +4,7 @@ const Booking = require('../model/BookingModel');
 // Create a new booking
 const createBooking = async (bookingData) => { //checked
     try {
+        console.log(bookingData);
         const booking = await Booking.create({...bookingData, status: "PENDING"});
         return booking;
     } catch (error) {

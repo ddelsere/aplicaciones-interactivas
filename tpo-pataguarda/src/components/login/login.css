@@ -1,109 +1,105 @@
-/* Style the container */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 75vh;
-    background-color: #203629;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style the header */
-  .login-container header {
-    font-size: 2rem;
-    margin: 2rem 0;
-  }
-  
-  /* Style the main section */
-  .login-container main {
-    background-color: #3c6e6e;
-    padding: 2em;
-    border-radius: 1em;
-    text-align: center;
-    width: 90%;
-    max-width: 30em;
-  }
-  
-  /* Style the headings */
-  .login-container h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5em;
-  }
-  
-  .login-container h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5em;
-    text-align: center;
-  }
-  
-  /* Style the form */
-  .login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  .login-container .input-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  .login-container .input-group label {
-    font-size: 1rem;
-    margin-bottom: 0.5em;
-  }
-  
-  .login-container .input-group input {
-    padding: 0.5em;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5em;
-  }
-  
-  /* Style the forgot password link */
-  .login-container .forgot-password {
-    text-align: right;
-  }
-  
-  .login-container .forgot-password a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-  
-  /* Style the button */
-  .login-container button {
-    padding: 0.75em;
-    font-size: 1.25rem;
-    background-color: white;
-    color: #3c6e6e;
-    border: none;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-container button:hover {
-    background-color: lightgray;
-  }
-  
-  /* Style the messages */
-  .login-container .error {
-    color: red;
-    font-size: 1rem;
-  }
-  
-  .login-container .message {
-    color: white;
-    font-size: 1rem;
-  }
-  
-  /* Style the footer */
-  .login-container footer {
-    margin-top: 2rem;
-    font-size: 0.875rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  background-color: #203629;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+
+.login-container header {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.login-container main {
+  background-color: #3c6e6e;
+  padding: 2em;
+  border-radius: 1em;
+  text-align: center;
+  width: 90%;
+  max-width: 30em;
+}
+
+
+.login-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+.login-container h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.login-container .input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-container .input-group label {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.login-container .input-group input {
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+
+.login-container .forgot-password {
+  text-align: right;
+}
+
+.login-container .forgot-password a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+
+.login-container button {
+  padding: 0.75em;
+  font-size: 1.25rem;
+  background-color: white;
+  color: #3c6e6e;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: lightgray;
+}
+
+
+.login-container .error {
+  color: red;
+  font-size: 1rem;
+}
+
+.login-container .message {
+  color: white;
+  font-size: 1rem;
+}
+
+
+.login-container footer {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}

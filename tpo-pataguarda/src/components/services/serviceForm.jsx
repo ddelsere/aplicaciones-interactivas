@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState} from 'react';
 import './serviceForm.css';
 
 const ServiceForm = ({ idProvider, service, onClose }) => {
-    console.log(service)
+
     const [formState, setFormState] = useState(service ? 
         {
             category: 'Paseo',
@@ -30,28 +29,6 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
         message: '',
     });
 
-    // const history = useHistory();
-
-    // useEffect(() => {
-    //     if (service) {
-    //         const fetchService = async () => {
-    //             try {
-    //                 const response = await fetch(`http://localhost:8081/api/v1/services/${serviceId}`);
-    //                 const data = await response.json();
-    //                 if (response.ok) {
-    //                     setFormState({ ...data, message: '' });
-    //                 } else {
-    //                     console.error(`Error: ${data.error}`);
-    //                 }
-    //             } catch (error) {
-    //                 console.error(`Error: ${error.message}`);
-    //             }
-    //         };
-
-    //         fetchService();
-    //     }
-    // }, [serviceId]);
-
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormState((prevState) => ({
@@ -71,8 +48,7 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
             const response = await fetch(endpoint, {
                 method,
                 headers: {
-                    'Content-Type':'application/json'
-                    
+                    'Content-Type':'application/json'                   
                 },
                 body: JSON.stringify(body),
             });
@@ -92,7 +68,6 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
                     message: '',
                 });
                 onClose();
-                // history.push(`/services/${serviceId ? serviceId : data.id}`);
             } else {
                 setFormState((prevState) => ({
                     ...prevState,

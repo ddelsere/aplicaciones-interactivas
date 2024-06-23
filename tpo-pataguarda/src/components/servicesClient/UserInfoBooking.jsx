@@ -2,6 +2,7 @@ import './userInfo.css';
 
 const UserInfo = ({ user }) => {
     return (
+        
         <div className="user-info">
         <div className="profile-card">
             <div className="profile-picture"></div>
@@ -16,6 +17,8 @@ const UserInfo = ({ user }) => {
             </div>
         </div>
     </div>
+    
+    
     );
 };
 

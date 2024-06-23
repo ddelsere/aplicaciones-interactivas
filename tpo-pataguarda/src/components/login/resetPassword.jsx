@@ -11,7 +11,6 @@ const ResetPassword = () => {
     const navigate = useNavigate();
 
 
-
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -48,7 +47,6 @@ const ResetPassword = () => {
 
     return (
         <div className="login-container">
-
             <div>
                 <h1>Bienvenido a Pataguarda</h1>
                 <h2>Inicia Sesión</h2>

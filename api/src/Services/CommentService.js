@@ -73,7 +73,7 @@ const getCommentByIdService = async (id, userType) => {
                 },
                 include: [User]
             });   
-            console.log(comments);         
+                     
             return comments;
         }
     } catch (error) {
@@ -84,7 +84,7 @@ const getCommentByIdService = async (id, userType) => {
 // Update a comment
 const updateComment = async (id, updateData) => {
     try {
-        console.log(updateData)
+        
         const comment = await Comment.findByPk(id);
         if (!comment) {
             throw new Error('Comment not found');
