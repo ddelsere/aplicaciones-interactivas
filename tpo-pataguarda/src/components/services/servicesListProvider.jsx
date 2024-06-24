@@ -2,16 +2,23 @@ import React, { useState, useEffect } from 'react';
 import ServiceForm from './serviceForm';
 import ServiceCard from './serviceCard';
 import './serviceList.css';
+import { useLocation } from 'react-router-dom';
 
-const ServicesList = ({idProvider}) => {
+const ServicesList = () => {
+
+    const location = useLocation();  
+    const { idProvider } = location.state || {};
+
     const [services, setServices] = useState([]);
     const [isModalCreateUpdateOpen, setIsModalCreateUpdateOpen] = useState(false);
     const [editingServiceId, setEditingServiceId] = useState(null);
+    const [idProviderEditing, setIdProviderEditing] = useState(idProvider);
 
 
-    const fetchServices = async () => {
+    const fetchServices = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8081/api/v1/services/${idProvider}`);
+            console.log(id)
+            const response = await fetch(`http://localhost:8081/api/v1/services/${id}`);
             const data = await response.json();
             console.log(data);
             if (response.ok) {
@@ -25,18 +32,20 @@ const ServicesList = ({idProvider}) => {
     };
 
     useEffect(() => {
-        fetchServices();
+        fetchServices(idProviderEditing);
     }, []);
 
     const openModalCreateUpdate = (service = null) => {
         setEditingServiceId(service);
         setIsModalCreateUpdateOpen(true);
+        setIdProviderEditing(idProvider);
     };
 
     const closeModalCreateUpdate = () => {
         setIsModalCreateUpdateOpen(false);
         setEditingServiceId(null);
-        fetchServices();
+        fetchServices(idProviderEditing);
+        setIdProviderEditing(null);
     };
 
 
@@ -49,7 +58,7 @@ const ServicesList = ({idProvider}) => {
 
         const data = await response.json();
         if (response.ok) {
-            fetchServices();
+            fetchServices(idProvider);
         }
     }
 

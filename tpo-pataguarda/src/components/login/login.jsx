@@ -19,16 +19,20 @@ const Login = () => {
       if (!response.ok) {
         throw new Error('Login failed');
       }
-
-
-      if (data.User.type === "P") {
-        //redirect to profile
-        console.log(data);
+      if(data.User){
         navigate('/services-provider', { state: { idProvider: data.id } })
-      } else {
-        //redirect to home
+
+      }else{
+
         navigate('/filter', { state: { idClient: data.id } });
       }
+
+      // if (data.User.type === "P") {
+      //   //redirect to profile
+      //   console.log(data);
+      // } else {
+      //   //redirect to home
+      // }
 
     } catch (error) {
       setError(error.message);

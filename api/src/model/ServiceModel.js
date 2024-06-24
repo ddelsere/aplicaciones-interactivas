@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Provider = require('./providerModel'); 
+// import { Op } from '@sequelize/core';
 
 // Defino el Schema
 const Service = sequelize.define('Service', {

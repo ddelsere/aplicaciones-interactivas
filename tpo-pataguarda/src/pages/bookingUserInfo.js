@@ -8,10 +8,9 @@ import { useLocation } from 'react-router-dom';
 function Booking() {
 
 
-    const location = useLocation();
-    console.log('estoy en Booking')
+    const location = useLocation();  
     const { service, user, idClient, startDate, finishDate } = location.state || {};
-    console.log(user);
+    
     return (
         <div style={{ backgroundColor: "#2E3B32", paddingBottom: "1%" }}>
 

@@ -2,10 +2,10 @@ import React, { useState} from 'react';
 import './serviceForm.css';
 
 const ServiceForm = ({ idProvider, service, onClose }) => {
-
+    console.log(service);
     const [formState, setFormState] = useState(service ? 
         {
-            category: 'Paseo',
+            category: service.category,
             price: service.price,
             startDate: service.startDate,
             finishDate: service.finishDate,

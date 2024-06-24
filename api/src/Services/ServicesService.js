@@ -1,12 +1,14 @@
 const Service = require('../model/ServiceModel');
 const Provider = require('../model/providerModel');
 const User = require('../model/UserModel');
+const { Op } = require("sequelize");
 
 // Create a new service
 const createService = async (serviceData) => { //checked
     try {
         console.log(serviceData)
         const service = await Service.create({...serviceData, active: true, name:serviceData.category});
+        console.log(service);
         return service;
     } catch (error) {
         throw new Error(error.message);
@@ -48,7 +50,7 @@ const getServiceByIdProvider = async (id) => { //checked
 
 const getServiceByFilter = async (filter) => {
     try {
-        console.log(filter.category);
+        console.log(filter);
         const whereClause = {};
 
         if (filter.category !== undefined) {
@@ -74,11 +76,14 @@ const getServiceByFilter = async (filter) => {
         }
 
         whereClause.active = true;
+        console.log(whereClause);
 
         const services = await Service.findAll({
             where: whereClause
         });
         let res = []
+        console.log('cantidad de servicios: ',services.length);
+        console.log('--------------------');
        for(const service of services)  {
        
             const provider =  await Provider.findByPk(service.idProvider, {include: [User]})
