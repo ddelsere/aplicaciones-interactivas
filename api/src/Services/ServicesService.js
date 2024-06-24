@@ -50,7 +50,7 @@ const getServiceByIdProvider = async (id) => { //checked
 
 const getServiceByFilter = async (filter) => {
     try {
-        console.log(filter);
+        
         const whereClause = {};
 
         if (filter.category !== undefined) {
@@ -76,7 +76,7 @@ const getServiceByFilter = async (filter) => {
         }
 
         whereClause.active = true;
-        console.log(whereClause);
+        
 
         const services = await Service.findAll({
             where: whereClause

@@ -8,14 +8,16 @@ import foto_dinero from '../assets/images/dinero.jpg';
 
 function Servicios() {
   const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    telefono: '',
-    correoElectronico: '',
-    domicilio: '',
-    contraseña: '',
+    name: '',
+    surname: '',
+    phoneNumber: '',
+    email: '',
+    address: '',
+    password: '',
+    type: 'P',
     fotoPerfil: null,
   });
+  const [message, setMessage] = useState(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -29,23 +31,18 @@ function Servicios() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Aquí puedes enviar los datos del formulario a tu backend
-    // utilizando fetch o axios.
-    // Por ejemplo:
+    
     try {
-      const response = await fetch('/api/providers', {
+      const response = await fetch('http://localhost:8081/api/v1/users/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // Maneja el éxito de la solicitud.
-        console.log('Proveedor registrado exitosamente!');
-        // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito.
+        setMessage("Se ha registrado exitosamente!")
       } else {
-        // Maneja el error de la solicitud.
-        console.error('Error al registrar proveedor:', response.status);
+        setMessage('Error al registrar el proveedor.')
       }
     } catch (error) {
       console.error('Error al enviar formulario:', error);
@@ -62,31 +59,31 @@ function Servicios() {
             <div className="form-column1">
               <div className='nombre'>
                 <label for="nombre">Nombre:</label>
-                <input type="text"  name="nombre" value={formData.nombre} onChange={handleChange} required />
+                <input type="text"  name="name" value={formData.name} onChange={handleChange} required />
               </div>
               <div className='apellido'>
                 <label for="nombre">Apellido:</label>
-                <input type="text" name="apellido" value={formData.apellido} onChange={handleChange} required />
+                <input type="text" name="surname" value={formData.surname} onChange={handleChange} required />
               </div>
               
               <div className='telefono'>
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" value={formData.telefono} onChange={handleChange} required />
+                <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
               </div>
 
               <div className='correoElectronico'>
                 <label for="correoElectronico">Correo Electrónico:</label>
-                <input type="email" name="correoElectronico" value={formData.correoElectronico} onChange={handleChange} required />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
 
               <div className='domicilio'>
                 <label for="domicilio">Domicilio:</label>
-                <input type="text" name="domicilio" value={formData.domicilio} onChange={handleChange} required />
+                <input type="text" name="address" value={formData.address} onChange={handleChange} required />
               </div>
 
               <div className='contraseña'>
                 <label for="contraseña">Contraseña:</label>
-                <input type="password" name="contraseña" value={formData.contraseña} onChange={handleChange} required />
+                <input type="password" name="password" value={formData.password} onChange={handleChange} required />
               </div>
               
               
@@ -102,8 +99,8 @@ function Servicios() {
             </div>
           </div>
           
+        {message ? <p>{message}</p> : ''}
         </form>
-        
       </section>
       
       <section className="intro">
