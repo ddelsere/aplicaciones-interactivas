@@ -11,6 +11,8 @@ import CommentsModalProvider from './components/comments/commentsProvider';
 import Booking from './pages/bookingUserInfo';
 import ServicesFilter from './components/filter/cards';
 import Filter from './pages/filter';
+import UserProfilePage from './pages/userProfile';
+import ProviderProfilePage from './pages/providerProfile';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
           <Route path='/services-provider' element={<ServiciosProvider />} />
           <Route path='/filter' element={<Filter/> }  />
           <Route path='/booking'  element={<Booking/>}/>
+          <Route path="/user-profile" element={<UserProfilePage />} />
+          <Route path="/provider-profile" element={<ProviderProfilePage />} />
         </Routes>
         
         {/* <ServiciosProvider idProvider={1} /> */}

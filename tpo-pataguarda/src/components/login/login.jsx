@@ -15,24 +15,17 @@ const Login = () => {
     try {
       const response = await fetch(`http://localhost:8081/api/v1/login?email=${email}&password=${password}`);
       const data = await response.json();
-      console.log(data);
       if (!response.ok) {
         throw new Error('Login failed');
       }
-      if(data.User){
-        navigate('/services-provider', { state: { idProvider: data.id } })
+      if(data.User){//es proveedor
+        navigate('/provider-profile', { state: { provider: data } })
 
-      }else{
+      }else{ //es cliente
 
-        navigate('/filter', { state: { idClient: data.id } });
+        navigate('/user-profile', { state: { user: data } });
       }
 
-      // if (data.User.type === "P") {
-      //   //redirect to profile
-      //   console.log(data);
-      // } else {
-      //   //redirect to home
-      // }
 
     } catch (error) {
       setError(error.message);

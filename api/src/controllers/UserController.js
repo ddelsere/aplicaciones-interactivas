@@ -32,6 +32,7 @@ exports.getUserById = async (req, res) => {
 
 // Update a user
 exports.updateUser = async (req, res) => {
+    console.log(req.body);
     try {
         const user = await userService.updateUser(req.params.id, req.body);
         res.status(200).json(user);

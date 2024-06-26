@@ -1,5 +1,9 @@
 const { where } = require('sequelize');
 const Booking = require('../model/BookingModel');
+const User = require('../model/UserModel');
+const Service = require('../model/ServiceModel');
+const Provider = require('../model/providerModel');
+
 
 // Create a new booking
 const createBooking = async (bookingData) => { //checked
@@ -27,21 +31,29 @@ const getAllBookings = async () => {
 const getBookingByIdUser = async (id, userType) => { //checked
     try {
         if(userType == "C"){
-            const booking = await Booking.findAll({
+            const bookings = await Booking.findAll({
                 where: {
                     idUser: id
-                }
+                },
+                include: [Provider, Service]
             });
-            if (!booking) {
+            if (!bookings) {
                 throw new Error('Booking not found');
             }
-            return booking;
+            let res = []
+            for(const booking of bookings){
+                const provider = await Provider.findByPk(booking.idProvider, {include: [User]})
+                let data = {booking: booking, provider: provider.User};
+            res.push(data);
+            }
+            return res;
         }else{ //si es provider el id que se pasa es el de provider
             const booking = await Booking.findAll(
                 {
                     where: {
                         idProvider: id
-                    }
+                    },
+                    include: [User, Service]
                     
                 }
             );
@@ -60,6 +72,7 @@ const getBookingByIdUser = async (id, userType) => { //checked
 // Update a booking
 const updateBooking = async (id, updateData) => { //checked, solo se actualiza el estado
     try {
+        console.log(updateData);
         const booking = await Booking.findByPk(id);
         if (!booking) {
             throw new Error('Booking not found');
