@@ -48,9 +48,10 @@ const CommentsModalClient = ({ idService, userType, onClose, idUser }) => {
             let body = {
                 message: message,
                 score: score,
-                idUser: idUser.idClient,
+                idUser: idUser,
                 idService: idService
             }
+            console.log(body);
             const response = await fetch(`http://localhost:8081/api/v1/services/comments/`, {
                 method: 'POST',
                 headers: {

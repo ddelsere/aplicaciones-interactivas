@@ -2,10 +2,9 @@ import React, { useState} from 'react';
 import './serviceForm.css';
 
 const ServiceForm = ({ idProvider, service, onClose }) => {
-
-    const [formState, setFormState] = useState(service ? 
-        {
-            category: 'Paseo',
+    const [formState, setFormState] = useState(service
+        ? {
+            category: service.category,
             price: service.price,
             startDate: service.startDate,
             finishDate: service.finishDate,
@@ -15,73 +14,73 @@ const ServiceForm = ({ idProvider, service, onClose }) => {
             description: service.description,
             idProvider: idProvider,
             message: '',
-        }
-         : {
-        category: 'Paseo',
-        price: 0,
-        startDate: '',
-        finishDate: '',
-        frequency: 'Diario',
-        zone: 'Caballito',
-        species: 'Gato',
-        description: '',
-        idProvider: idProvider,
-        message: '',
-    });
-
-    const handleChange = (event) => {
+          }
+        : {
+            category: 'Paseo',
+            price: 0,
+            startDate: '',
+            finishDate: '',
+            frequency: 'Diario',
+            zone: 'Caballito',
+            species: 'Gato',
+            description: '',
+            idProvider: idProvider,
+            message: '',
+          }
+      );
+    
+      const handleChange = (event) => {
         const { name, value } = event.target;
         setFormState((prevState) => ({
-            ...prevState,
-            [name]: value,
+          ...prevState,
+          [name]: value,
         }));
-    };
-
-    const handleSubmit = async (event) => {
+      };
+    
+      const handleSubmit = async (event) => {
         event.preventDefault();
         const method = service ? 'PUT' : 'POST';
         const endpoint = service ? `http://localhost:8081/api/v1/services/${service.id}` : 'http://localhost:8081/api/v1/services/';
         const { message, ...body } = formState;
-
+    
         try {
-            console.log(formState);
-            const response = await fetch(endpoint, {
-                method,
-                headers: {
-                    'Content-Type':'application/json'                   
-                },
-                body: JSON.stringify(body),
+          const response = await fetch(endpoint, {
+            method,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+          });
+    
+          const data = await response.json();
+          if (response.ok) {
+            setFormState({
+              category: 'Paseo',
+              price: 0,
+              startDate: '',
+              finishDate: '',
+              frequency: 'Diario',
+              zone: 'Caballito',
+              species: 'Gato',
+              description: '',
+              idProvider: idProvider,
+              message: '',
             });
-
-            const data = await response.json();
-            if (response.ok) {
-                setFormState({
-                    category: 'Paseo',
-                    price: 0,
-                    startDate: '',
-                    finishDate: '',
-                    frequency: 'Diario',
-                    zone: 'Caballito',
-                    species: 'Gato',
-                    description: '',
-                    idProvider: idProvider,
-                    message: '',
-                });
-                onClose();
-            } else {
-                setFormState((prevState) => ({
-                    ...prevState,
-                    message: `Error: ${data.error}`,
-                }));
-            }
             onClose();
-        } catch (error) {
+          } else {
             setFormState((prevState) => ({
-                ...prevState,
-                message: `Error: ${error.message}`,
+              ...prevState,
+              message: `Error: ${data.error}`,
             }));
+          }
+          onClose();
+        } catch (error) {
+          setFormState((prevState) => ({
+            ...prevState,
+            message: `Error: ${error.message}`,
+          }));
         }
-    };
+      };
 
     return (
         <div className="modal">

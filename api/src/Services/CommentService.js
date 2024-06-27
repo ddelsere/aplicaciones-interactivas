@@ -73,7 +73,7 @@ const getCommentByIdService = async (id, userType) => {
                 },
                 include: [User]
             });   
-                     
+                 
             return comments;
         }
     } catch (error) {

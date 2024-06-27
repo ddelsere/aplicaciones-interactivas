@@ -15,6 +15,7 @@ const CommentsModalProvider = ({ idService, userType, onClose }) => {
         try {
             const response = await fetch(`http://localhost:8081/api/v1/services/comments/${idService}/${userType}`);
             const data = await response.json();
+            
             if (response.ok) {
                 setComments(data);
             }
@@ -65,6 +66,8 @@ const CommentsModalProvider = ({ idService, userType, onClose }) => {
                 {error && <p className="error">{error}</p>}
                 {isLoading ? (
                     <p>Loading...</p>
+                ) : ( comments.length === 0 ? (
+                    <p>Aun no hay comentarios</p>
                 ) : (
                     comments.map(comment => (
                         <div key={comment.id} className="comment">
@@ -85,7 +88,7 @@ const CommentsModalProvider = ({ idService, userType, onClose }) => {
                             )}
                         </div>
                     ))
-                )}
+                ))}
             </div>
         </div>
     );
