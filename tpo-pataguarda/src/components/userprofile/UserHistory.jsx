@@ -14,8 +14,6 @@ const UserHistory = ({ idUser }) => {
     try {
       const response = await fetch(`http://localhost:8081/api/v1/bookings/${idUser}/${'C'}`);
       const data = await response.json();
-      console.log(data);
-      console.log(data[0].status)
       if (response.ok) {
         setReservas(data);
       } else {

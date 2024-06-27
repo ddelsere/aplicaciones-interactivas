@@ -14,7 +14,6 @@ const EditInfoModal = ({ onClose, user }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateUser();
-    // onClose(updatedUser);// cierra el modal después de actualizar la información
   };
 
   const updateUser = async() =>{
@@ -30,7 +29,7 @@ const EditInfoModal = ({ onClose, user }) => {
   if (response.ok) {
     const updatedUser = await response.json();
     console.log('Información actualizada:', updatedUser);
-    onClose(updatedUser); // Pass updated user data back to the parent component
+    onClose(updatedUser); 
   } else {
     console.error('Error updating user information');
   }
@@ -60,19 +59,6 @@ const EditInfoModal = ({ onClose, user }) => {
           Teléfono:
           <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
         </label>
-        {/* <label>
-          Edad:
-          <input type="number" value={age} onChange={(e) => setAge(e.target.value)} required />
-        </label>
-        <label>
-          Género:
-          <select value={gender} onChange={(e) => setGender(e.target.value)} required>
-            <option value="">Seleccionar</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </label> */}
         <div className="modal-buttons">
           <button type="submit">Guardar</button>
           <button type="button" onClick={onClose}>Cancelar</button>
