@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../services/serviceForm.css';
 
+
 const FormBooking = ({ idUser, service, onClose, startDate, finishDate }) => {
-    
+
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -52,7 +53,8 @@ const FormBooking = ({ idUser, service, onClose, startDate, finishDate }) => {
                     idProvider: service.idProvider
                 });
                 onClose();
-                //TODO: redirect al profile para que vea sus reservas
+                
+                
             } else {
                 setFormState((prevState) => ({
                     ...prevState,

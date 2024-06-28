@@ -21,7 +21,7 @@ exports.getServiceId = async(req, res) => { //BORRAR!
 // Get all services
 exports.getAllServices = async (req, res) => { //BY FILTER
     try {
-        
+        console.log(req.query);
         const services = await serviceService.getServiceByFilter(req.query);
         res.status(200).json(services);
     } catch (error) {

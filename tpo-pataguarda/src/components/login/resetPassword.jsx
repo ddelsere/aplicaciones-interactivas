@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Header';
 
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
@@ -46,6 +47,8 @@ const ResetPassword = () => {
     };
 
     return (
+        <div>
+            <Header/>
         <div className="login-container">
             <div>
                 <h1>Bienvenido a Pataguarda</h1>
@@ -87,6 +90,7 @@ const ResetPassword = () => {
                 {message && <p className="message">{message}</p>}
             </div>
 
+        </div>
         </div>
     );
 };

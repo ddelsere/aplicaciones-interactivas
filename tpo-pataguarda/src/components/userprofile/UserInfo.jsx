@@ -1,6 +1,6 @@
 import React from 'react';
 import '../servicesClient/userInfo.css';
-import perfil_proveedor from '../src/assets/images/hombre1.jpg'
+import perfil_proveedor from '../../assets/images/mujer1.jpg'
 
 const UserInfo = ({ user, pets = [], onEdit, onAddPet }) => {
   const handleEditInfo = () => {
@@ -10,7 +10,7 @@ const UserInfo = ({ user, pets = [], onEdit, onAddPet }) => {
   return (
     <div className="user-info">
       <div className="profile-card">
-        <img className="profile-picture" src={perfil_proveedor} >
+        <img className="profile-picture" src={perfil_proveedor} alt='imagen de perfil' />
         <h2>{user.name} {user.surname}</h2>
         {pets.map((pet, index) => (
           <p key={index}>{pet.name}: {pet.species}</p>

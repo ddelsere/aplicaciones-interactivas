@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './FiltroServicios.css';
-import Cards from './filter/cards';
-import { useNavigate } from 'react-router-dom';
 
 const FiltroServicios = ({ idClient, setFiltro }) => {
-  const [pet, setPet] = useState('');
+  const [species, setSpecies] = useState('');
   const [category, setCategory] = useState('');
   const [zone, setZone] = useState('');
   const [frequency, setFrequency] = useState('');
@@ -15,7 +13,7 @@ const FiltroServicios = ({ idClient, setFiltro }) => {
   const handleSearch = () => {
     const newFiltro = {};
 
-  if (pet) newFiltro.pet = pet;
+  if (species) newFiltro.species = species;
   if (category) newFiltro.category = category;
   if (zone) newFiltro.zone = zone;
   if (frequency) newFiltro.frequency = frequency;
@@ -32,11 +30,11 @@ const FiltroServicios = ({ idClient, setFiltro }) => {
           <label>Estoy buscando servicio para mi:</label>
           <div className="radio-group">
             <label>
-              <input type="radio" name="pet" value="gato" onChange={(e) => setPet(e.target.value)} />
+              <input type="radio" name="species" value="gato" onChange={(e) => setSpecies(e.target.value)} />
               Gato
             </label>
             <label>
-              <input type="radio" name="pet" value="perro" onChange={(e) => setPet(e.target.value)} />
+              <input type="radio" name="species" value="perro" onChange={(e) => setSpecies(e.target.value)} />
               Perro
             </label>
           </div>

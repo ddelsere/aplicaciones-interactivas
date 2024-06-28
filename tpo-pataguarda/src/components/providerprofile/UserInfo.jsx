@@ -1,7 +1,7 @@
 // src/components/UserInfo/UserInfo.jsx
 import React from 'react';
 import './UserInfo.css';
-import perfil_proveedor from '../src/assets/images/hombre1.jpg'
+import perfil_proveedor from '../../assets/images/perfil_clientes.jpg';
 
 const UserInfo = ({ user, onEdit }) => {
   
@@ -13,12 +13,12 @@ const UserInfo = ({ user, onEdit }) => {
   return (
     <div className="user-info">
         <div className="profile-card">
-            <img className="profile-picture" src={perfil_proveedor}>
+            <img className="profile-picture" src={perfil_proveedor} alt='imagen de perfil'/>
             <h2>{user.name} {user.surname}</h2>
             {/* ver score */}
         </div>
         <div className="details-card">
-            <h3>INFORMACION DEL CLIENTE</h3>
+            <h3>INFORMACION DEL PROVEEDOR</h3>
             <div className="details">
                 <p><strong>Email</strong><span>{user.email}</span></p>
                 <p><strong>Numero celular</strong><span>{user.phoneNumber}</span></p>

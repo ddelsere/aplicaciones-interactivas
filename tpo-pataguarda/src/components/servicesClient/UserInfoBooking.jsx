@@ -1,12 +1,12 @@
 import './userInfo.css';
-import foto_cliente from '../src/assets/images/perfil_clientes.jpg';
+import foto_cliente from '../../assets/images/perfil_clientes.jpg';
 
 const UserInfo = ({ user }) => {
     return (
         
         <div className="user-info">
         <div className="profile-card">
-            <img className="profile-picture" src={foto_cliente}>
+            <img className="profile-picture" src={foto_cliente} alt='imagen de perfil' />
             <h2>{user.name} {user.surname}</h2>
         </div>
         <div className="details-card">

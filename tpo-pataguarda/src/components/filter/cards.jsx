@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './cards.css';
-import foto_perfil from '../../assets/images/hombre1.jpg';
+import foto_perfil from '../../assets/images/perfil_clientes.jpg';
 
 const Cards = ({ client, filtro }) => {
+
   const [services, setServices] = useState([]);
   const [error, setError] = useState(null);
   
@@ -11,7 +12,6 @@ const Cards = ({ client, filtro }) => {
   const finishDate = filtro.finishDate;
 
   useEffect(() => {
-    console.log(fetch)
     const fetchServices = async () => {
       try {
         const queryString = new URLSearchParams(filtro).toString();
@@ -31,7 +31,7 @@ const Cards = ({ client, filtro }) => {
     };
 
     fetchServices();
-  }, [filtro]); // Add filtro as a dependency
+  }, [filtro]); 
 
   return (
     <div className="services-container-filter">
