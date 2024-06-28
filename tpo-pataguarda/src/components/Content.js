@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Content.css';
 import foto_paseo from '../assets/images/paseo.png';
@@ -13,9 +14,10 @@ const descriptions = {
 
 const Content = ({ className = "" }) => {
   const [active, setActive] = useState('paseo');
+  const navigate = useNavigate();
 
   const onDoitButtonContainerClick = useCallback(() => {
-    
+    navigate('/login' )
   }, []);
 
   return (
