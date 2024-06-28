@@ -9,7 +9,7 @@ function Filter() {
   const [filtro, setFiltro] = useState({});
   console.log(filtro)
   return (
-    <div>
+    <div style={{background: '#203629'}}>
       <FiltroServicios setFiltro={setFiltro} idClient={idClient} />
       <Cards idClient={idClient} filtro={filtro} />
     </div>

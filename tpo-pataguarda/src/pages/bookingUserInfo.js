@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../components/servicesClient/userInfo.css';
 import UserInfo from '../components/servicesClient/UserInfoBooking';
 import ServiceCardBooking from '../components/servicesClient/ServiceCardClient';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +12,7 @@ function Booking() {
     const { service, user, idClient, startDate, finishDate } = location.state || {};
     
     return (
-        <div style={{ backgroundColor: "#2E3B32", paddingBottom: "1%" }}>
+        <div className='booking-user-info' style={{ backgroundColor: "#203629", paddingBottom: "1%" }}>
 
             <UserInfo user={user} />
             <ServiceCardBooking title={user.name + ' ' + user.surname} service={service} idUser={idClient} startDate={startDate} finishDate={finishDate} />
