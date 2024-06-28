@@ -6,7 +6,7 @@ import EditInfoModal from '../providerprofile/EditInfoModal';
 import '../servicesClient/userInfo.css';
 
 const UserProfile = ({ user }) => {
-  console.log(user)
+  console.log(user);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isAddPetModalOpen, setAddPetModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(user);
@@ -17,7 +17,7 @@ const UserProfile = ({ user }) => {
   };
 
   const handleCloseModal = (updatedUser) => {
-    if (updatedUser) {
+    if (updatedUser !== null) {
       setCurrentUser(updatedUser);
     }
     setEditModalOpen(false);
