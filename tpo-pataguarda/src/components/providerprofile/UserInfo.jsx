@@ -13,7 +13,7 @@ const UserInfo = ({ user, onEdit }) => {
   return (
     <div className="user-info">
         <div className="profile-card">
-            <img className="profile-picture" {perfil_proveedor}>
+            <img className="profile-picture" src={perfil_proveedor}>
             <h2>{user.name} {user.surname}</h2>
             {/* ver score */}
         </div>
