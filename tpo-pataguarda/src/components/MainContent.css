@@ -6,8 +6,8 @@
 
 .hero .hero-image {
   width: 100%;
-  object-fit: cover; /* ajusta la imagen al tamaño del contenedor */
-  object-position: center; /* centra la imagen horizontalmente */
+  object-fit: cover; 
+  object-position: center; 
   height: 800px;
 }
 
@@ -42,14 +42,14 @@
 .reason1 p{
   font-size: large;
   width: 35%;
-  text-align: left; /* Alinea el texto a la derecha */
+  text-align: left; 
   margin-top: 2%;
 }
 
 .ayuda-icon{
-  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
-  border: 2px solid #000; /* Borde negro con 2px de grosor */
-  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+  border-radius: 50%; 
+  border: 2px solid #000; 
+  overflow: hidden; 
 }
 .reason1 img{
   width: 10%;
@@ -70,14 +70,14 @@
 .reason2 p{
   font-size: large;
   width: 35%;
-  text-align: left; /* Alinea el texto a la derecha */
+  text-align: left; 
   margin-top: 2%;
 }
 
 .reason2 .ayuda-icon{
-  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
-  border: 2px solid #000; /* Borde negro con 2px de grosor */
-  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+  border-radius: 50%; 
+  border: 2px solid #000; 
+  overflow: hidden; /
 }
 .reason2 img{
   width: 10%;
@@ -98,14 +98,14 @@
 .reason3 p{
   font-size: large;
   width: 35%;
-  text-align: left; /* Alinea el texto a la derecha */
+  text-align: left; 
   margin-top: 2%;
 }
 
 .reason3 .ayuda-icon{
-  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
-  border: 2px solid #000; /* Borde negro con 2px de grosor */
-  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+  border-radius: 50%; 
+  border: 2px solid #000; 
+  overflow: hidden; 
 }
 .reason3 img{
   width: 10%;
@@ -125,8 +125,8 @@
   
 }
 footer {
-  z-index: -1; /* Agrega un z-index negativo para que se posicione debajo de la sección */
-  z-index: -1;
+  z-index: -1; 
+  
 }
 .contratar {
   position: relative;
@@ -157,7 +157,7 @@ footer {
 
 
 
-/* Media queries para responsive */
+
 
 @media (max-width: 768px) {
   .reason1 {
@@ -166,7 +166,7 @@ footer {
   }
 
   .reason1 p {
-    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+    width: 100%; 
   }
   .contratar .overlay-content {
     margin-top: 15%;
@@ -179,7 +179,7 @@ footer {
   }
 
   .reason2 p {
-    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+    width: 100%; 
   }
   .reason3 {
     flex-direction: column;
@@ -187,7 +187,7 @@ footer {
   }
 
   .reason3 p {
-    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+    width: 100%; 
   }
 
  
