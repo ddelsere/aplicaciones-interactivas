@@ -1,9 +1,7 @@
-// src/pages/userProfile.js
-
 import React from 'react';
-import UserProfile from '../components/providerprofile/ProviderProfile'; // Importa el componente principal del perfil de usuario
 import ProviderProfile from '../components/providerprofile/ProviderProfile';
 import { useLocation } from 'react-router-dom';
+import HeaderProvider from '../components/Header_proveedores';
 
 function ProviderProfilePage() {
   const location = useLocation();
@@ -11,7 +9,7 @@ function ProviderProfilePage() {
   console.log(provider)
   return (
     <div>
-      
+      <HeaderProvider provider={provider}/>
       <ProviderProfile provider={provider} />
       
     </div>

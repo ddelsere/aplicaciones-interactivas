@@ -4,7 +4,6 @@ import './Content.css';
 import foto_paseo from '../assets/images/paseo.png';
 import foto_silba from '../assets/images/silbato.png';
 import foto_cuidar from '../assets/images/cuidado.png';
-import { useNavigate } from 'react-router-dom';
 
 const descriptions = {
   paseo: 'Elige entre paseos de 20, 30 o 60 minutos. Nuestros paseadores expertos garantizan que tu mascota reciba el ejercicio necesario. Disfruta la tranquilidad sabiendo que tu amigo peludo está feliz y activo.',
@@ -14,10 +13,9 @@ const descriptions = {
 
 const Content = ({ className = "" }) => {
   const [active, setActive] = useState('paseo');
-  const navigate = useNavigate();
 
   const onDoitButtonContainerClick = useCallback(() => {
-    navigate('/login');
+    // Please sync "INCIAR SESION" to the project
   }, []);
 
   return (

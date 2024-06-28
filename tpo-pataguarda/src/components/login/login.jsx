@@ -23,7 +23,7 @@ const Login = () => {
 
       }else{ //es cliente
 
-        navigate('/user-profile', { state: { user: data } });
+        navigate('/home-user', { state: { user: data } });
       }
 
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import CommentsModalProvider from '../comments/commentsProvider'; 
 
 const ServiceCard = ({ service, onEdit, onDelete }) => {
+    console.log(service)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedServiceId, setSelectedServiceId] = useState(null);
@@ -44,9 +45,9 @@ const ServiceCard = ({ service, onEdit, onDelete }) => {
                 </div>
             </div>
             <div className="service-actions">
-                <a href="#" onClick={() => openModal(service.id)} >Ver comentarios</a>
-                <a href="#" onClick={() => onDelete(service.id)}>Eliminar</a>
-                <a href="#" onClick={() => onEdit(service)}>Modificar</a>
+            <span className="comments-link" onClick={() => openModal(service.id)}>Ver comentarios</span>
+            <span className="comments-link" onClick={() => onDelete(service.id)}>Eliminar</span>
+            <span className="comments-link" onClick={() => onEdit(service)}>Modificar</span>
             </div>
             {isModalOpen && (
         <CommentsModalProvider

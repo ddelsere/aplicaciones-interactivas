@@ -31,12 +31,6 @@ const ProviderProfile = ({provider}) => {
   return (
     <div className="user-profile">
       
-        {/* <UserProfileHeader 
-          userName={provider.User.name} surname={provider.User.surname}
-          // userImage={provider.photo}
-          // rating={provider.rating} // Pasamos la calificación como prop
-        /> */}
-        {/* <UserInfo user={providerData.User} onEdit={handleEditInfo} /> */}
         <UserInfo user={providerData.User} onEdit={handleEditInfo}  />
       
 

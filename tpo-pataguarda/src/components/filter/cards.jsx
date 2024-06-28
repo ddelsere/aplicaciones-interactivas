@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './cards.css';
+import foto_perfil from '../../assets/images/hombre1.jpg';
 
-const Cards = ({ idClient, filtro }) => {
+const Cards = ({ client, filtro }) => {
   const [services, setServices] = useState([]);
   const [error, setError] = useState(null);
   
@@ -40,13 +41,13 @@ const Cards = ({ idClient, filtro }) => {
       ) : (
         services.map(({ service, user }) => (
           <div key={service.id} className="service-card-filter">
-            <div className="profile-picture"></div>
+            <img className="profile-picture" src={foto_perfil} alt='perfil'></img>
             <h2>{`${user.name} ${user.surname}`}</h2>
             <p className="category">Categoria: <span>{service.category}</span></p>
             <div className="rating">
               {service.score ? '⭐'.repeat(service.score) : 'Sin calificación'}
             </div>
-            <Link to={'/booking'} state={{ service, user, idClient, startDate, finishDate }} className="info-link">+ Info</Link>
+            <Link to={'/booking'} state={{ service, user, client, startDate, finishDate }} className="info-link">+ Info</Link>
           </div>
         ))
       )}

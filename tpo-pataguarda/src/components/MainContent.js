@@ -9,9 +9,12 @@ import foto_ayudar from '../assets/images/ayudar.png';
 import foto_seguro from '../assets/images/seguro.png';
 import foto_encaje from '../assets/images/encaje.png';
 import Footer from './Footer';
+import Header from './Header';
 
 function MainContent() {
   return (
+    <div>
+      
     <main className="main-content">
       <div className="hero text-center">
         <img src={foto_pri} alt="Dog and woman" className="hero-image img-fluid"/>
@@ -70,6 +73,7 @@ function MainContent() {
       </div>
         
     </main>
+    </div>
   );
 }
 

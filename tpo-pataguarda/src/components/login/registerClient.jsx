@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.css'
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Header';
 
 const RegisterClient = () => {
     const [form, setForm] = useState({
@@ -49,6 +49,8 @@ const RegisterClient = () => {
     };
 
     return (
+        <div>
+            <Header/>
         <div className="login-container">
             <div>
                 <h1>Bienvenido a Pataguarda</h1>
@@ -127,7 +129,7 @@ const RegisterClient = () => {
                 {message && <p className="message">{message}</p>}
             </div>
         </div>
-    
+        </div>
     );
 };
 

@@ -168,6 +168,27 @@ footer {
   .reason1 p {
     width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
   }
+  .contratar .overlay-content {
+    margin-top: 15%;
+    width: 100%;
+    
+  }
+  .reason2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reason2 p {
+    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+  }
+  .reason3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reason3 p {
+    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+  }
 
  
 }
