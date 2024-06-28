@@ -41,12 +41,15 @@
 
 .parte-inferior {
   display: flex;
+  
 
 }
 
 .parte-inferior-izquierda{
-
-  flex: 2;
+  display: flex;
+  text-align: justify;
+  margin-left: 2%;
+  flex: 3;
 }
 .parte-inferior-derecha {
   flex: 1;
@@ -69,4 +72,5 @@ button {
   .parte-inferior {
     flex-direction: column;
   }
+  
 }

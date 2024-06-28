@@ -1,131 +1,135 @@
 .header {
     background-color: #4D6155;
-    padding: 1% 0;
-}
- 
-.navbar-brand {
-    font-weight: bold;
-    color: white; /* Color del texto de la marca */
-    text-decoration: none; /* Elimina el subrayado por defecto */
-}
- 
-.navbar {
-    background-color: #4D6155;
-}
- 
-.navbar-nav .nav-link {
-    color: white; /* Color del texto de los enlaces */
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    white-space: nowrap;
-   
-   
-}
- 
-.navbar-nav .nav-link:hover {
-    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
-}
- 
-#nombre {
-    color: white;
-    text-decoration: none; /* Elimina el subrayado por defecto */
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
- 
-#nombre:hover {
-    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
-}
- 
-/* Estilos del dropdown */
-.dropdown-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-toggler {
     display: none;
-    position: absolute;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    list-style: none;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-link:hover {
+    color: lightgrey;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute; /* Change from absolute to relative */
     background-color: #4D6155;
-    color: black;
-    min-width: 10em;
-    box-shadow: 0px 0.5em 1em 0px rgba(0,0,0,0.2);
+    color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    right: 0;
-    padding: 1% 0;
-}
- 
-.dropdown-content a {
-    color: white; /* Color del texto de los enlaces dentro del dropdown */
-    padding: 3%;
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    display: flex; /* Muestra los enlaces en bloque */
-    justify-content: center;
-}
- 
-.show {
+    /* Right: 0; */ /* Remove right: 0; to position relative to the button */
+    padding: 10px 0;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
     display: block;
-}
- 
-.cuenta-btn {
+  }
+  
+  .dropdown-content a:hover {
+    background-color: lightgrey;
+  }
+  
+  .cuenta-btn {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
-}
- 
-.arrow-down {
-    margin-left: 0.3em;
-}
- 
-.navbar-nav .nav-item:first-child {
-    margin-right: 3%;
-    margin-top: 3%;
-    white-space: nowrap;
-}
- 
-@media (max-width: 900px) {
-    .navbar-nav .nav-link {
-        padding: 2%; /* Ajusta el padding para mejorar el espacio en pantallas pequeñas */
+  }
+  
+  .arrow-down {
+    margin-left: 5px;
+  }
+  
+  .show {
+    display: block !important;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      flex-direction: column;
+      display: none;
+      width: 100%;
     }
- 
+  
     .navbar-toggler {
-        background-image: url('../assets/images/menu.png');
-        display: block; /* Muestra el botón del toggler en pantallas pequeñas */
-        background-color: transparent;
-        background-size: contain; /* Ajusta el tamaño de la imagen al contenedor */
-        background-repeat: no-repeat; /* Evita que la imagen se repita */
-        background-position: center; /* Centra la imagen en el contenedor */
-        width: 3rem; /* Ajusta el ancho del botón */
-        height: 3rem; /* Ajusta la altura del botón */
-        border: none; /* Elimina el borde */
-        padding: 0; /* Elimina el padding */
+      display: block;
     }
- 
-    .collapse {
-        display: block; /* Oculta la barra de navegación colapsada por defecto */
+  
+    .navbar-collapse.show {
+      display: flex;
     }
- 
-    .collapse.show {
-        display: block; /* Muestra la barra de navegación cuando se colapsa en pantallas pequeñas */
-    }
- 
+  
     .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        align-items: flex-start;
+      flex-direction: column;
+      width: 100%;
     }
- 
+  
     .navbar-nav .nav-item {
-        width: 100%;
-        text-align: left;
+      width: 100%;
+      text-align: center;
     }
- 
+  
     .dropdown-content {
-        position: static; /* Cambia la posición del dropdown en pantallas pequeñas */
-        width: 100%;
-        box-shadow: none;
+      position: static;
+      width: 100%;
+      box-shadow: none;
+      padding: 0;
     }
- 
-    .navbar-nav .show .dropdown-content {
-        display: block; /* Muestra el dropdown cuando se abre en pantallas pequeñas */
+  
+    .dropdown-content a {
+      padding: 10px;
+      text-align: center;
     }
-}
- 
+  }

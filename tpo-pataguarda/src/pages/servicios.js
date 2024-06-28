@@ -4,6 +4,7 @@ import foto_ani from '../assets/images/perro-gato.png';
 import foto_flexi from '../assets/images/flexibilidad.jpg';
 import foto_pasion from '../assets/images/pasion.jpg';
 import foto_dinero from '../assets/images/dinero.jpg';
+import Header from '../components/Header';
 
 
 function Servicios() {
@@ -50,6 +51,8 @@ function Servicios() {
   };
 
   return (
+    <div>
+      <Header/>
     <main className="main-container">
       <section className="form-section1">
         <h1>¡Conviértete en parte de nuestra manada!</h1>
@@ -134,6 +137,7 @@ function Servicios() {
         </div>
       </section>
     </main>
+    </div>
   );
 }
 

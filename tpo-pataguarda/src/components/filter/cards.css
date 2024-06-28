@@ -18,10 +18,9 @@
     box-sizing: border-box;
 }
 
-.profile-picture {
+.profile-picture { 
     width: 6rem;
     height: 6rem;
-    background: #ccc;
     border-radius: 50%;
     margin: 0 auto 1rem;
 }

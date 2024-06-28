@@ -6,6 +6,7 @@ import EditInfoModal from '../providerprofile/EditInfoModal';
 import '../servicesClient/userInfo.css';
 
 const UserProfile = ({ user }) => {
+  console.log(user)
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isAddPetModalOpen, setAddPetModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(user);

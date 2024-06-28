@@ -7,8 +7,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const ServicesList = () => {
     const location = useLocation();
     const navigate = useNavigate();
-  
-    const [idProvider, setIdProvider] = useState(location.state?.idProvider || null);
+  console.log(location.state.provider.id)
+    const [idProvider, setIdProvider] = useState(location.state.provider?.id || null);
   
     const [services, setServices] = useState([]);
     const [isModalCreateUpdateOpen, setIsModalCreateUpdateOpen] = useState(false);
@@ -23,7 +23,7 @@ const ServicesList = () => {
       try {
         const response = await fetch(`http://localhost:8081/api/v1/services/${idProvider}`);
         const data = await response.json();
-  
+  console.log(data)
         if (response.ok) {
           setServices(data);
         } else {
@@ -37,7 +37,7 @@ const ServicesList = () => {
     useEffect(() => {
       if (idProvider) {
         fetchServices();
-      }
+      }else{console.log('ERROR')}
     }, [idProvider]);
   
     const openModalCreateUpdate = (service = null) => {
