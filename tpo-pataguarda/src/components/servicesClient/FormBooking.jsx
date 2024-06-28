@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../services/serviceForm.css';
 
 const FormBooking = ({ idUser, service, onClose, startDate, finishDate }) => {
+    
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -10,7 +11,7 @@ const FormBooking = ({ idUser, service, onClose, startDate, finishDate }) => {
         message: '',
         startDate: startDate,
         finishDate: finishDate,
-        idUser: idUser.idClient,
+        idUser: idUser,
         idService: service.id,
         idProvider: service.idProvider
     });
