@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Header from './components/Header';
-import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Servicios from './pages/servicios';
 import LoginPage from './pages/login';
@@ -12,7 +10,7 @@ import Filter from './pages/filter';
 import UserProfilePage from './pages/userProfile';
 import ProviderProfilePage from './pages/providerProfile';
 import RegisterClient from './components/login/registerClient';
-import Incio_clientes from './pages/inicio_clientes';
+import InicioClientes from './pages/inicio_clientes';
 import Home from './pages/home';
 
 function App() {
@@ -21,7 +19,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Header /> */}
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pages/servicios" element={<Servicios />} />
@@ -34,7 +32,7 @@ function App() {
           <Route path="/user-profile" element={<UserProfilePage />} />
           <Route path="/provider-profile" element={<ProviderProfilePage />} />
           <Route path='/register-client' element={<RegisterClient/>}/>
-          <Route path='home-user' element={<Incio_clientes/>} />
+          <Route path='/home-user' element={<InicioClientes/>} />
         </Routes>
 
         <Footer />

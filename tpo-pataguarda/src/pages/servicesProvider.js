@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 function ServiciosProvider() {
   const location = useLocation();
   const { provider } = location.state || {};
-  console.log('servicios del proveedor: ',provider);
+  
   return (
     <div>
       <HeaderProvider provider={provider} />

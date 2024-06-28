@@ -2,14 +2,11 @@ import React from 'react';
 import './MainContent.css';
 import Content from './Content';
 import foto_pri from '../assets/images/principal.jpg';
-
 import foto_huellas from '../assets/images/huellas.png';
-
 import foto_ayudar from '../assets/images/ayudar.png';
 import foto_seguro from '../assets/images/seguro.png';
 import foto_encaje from '../assets/images/encaje.png';
-import Footer from './Footer';
-import Header from './Header';
+
 
 function MainContent() {
   return (

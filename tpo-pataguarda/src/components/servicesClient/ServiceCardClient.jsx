@@ -4,7 +4,7 @@ import CommentsModalClient from '../comments/CommentsModalClient';
 import FormBooking from './FormBooking';
 
 const ServiceCardBooking = ({ idUser, title, service, startDate, finishDate, userType }) => {
-    console.log(idUser);
+    
 
     const [isModalBookingsOpen, setIsBookingCommentsOpen] = useState(false);
     const [selectedServiceId, setSelectedServiceId] = useState(null);

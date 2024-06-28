@@ -155,10 +155,6 @@ footer {
  
 }
 
-
-
-
-
 @media (max-width: 768px) {
   .reason1 {
     flex-direction: column;

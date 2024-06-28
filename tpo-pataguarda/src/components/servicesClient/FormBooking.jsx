@@ -31,7 +31,7 @@ const FormBooking = ({ idUser, service, onClose, startDate, finishDate }) => {
         const endpoint = `http://localhost:8081/api/v1/bookings/`;
 
         try {
-            console.log(formState);
+            
             const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {

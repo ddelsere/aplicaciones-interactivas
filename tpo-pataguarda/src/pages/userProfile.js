@@ -6,7 +6,7 @@ import HeaderClientes from '../components/Header_clientes';
 function UserProfilePage() {
   const location = useLocation();
   const { user } = location.state || {};
-  console.log(user)
+
   return (
     <div >
       <HeaderClientes user={user} />

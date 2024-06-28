@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import { useLocation } from 'react-router-dom';
+
 
 function HeaderProvider({provider}) {
   
-  // const location = useLocation();
-  // const { provider } = location.state || {};
-  console.log(provider)
+
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(false);
 

@@ -27,7 +27,7 @@ const EditInfoModal = ({ onClose, user }) => {
 
     if (response.ok) {
       const updatedUser = await response.json();
-      console.log('Información actualizada:', updatedUser);
+      
       onClose(updatedUser);
     } else {
       console.error('Error updating user information');

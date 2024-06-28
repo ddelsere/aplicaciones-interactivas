@@ -63,7 +63,6 @@ button {
 }
 
 
-/* Responsive design */
 @media (max-width: 768px) {
   .parte-superior {
     flex-direction: column;

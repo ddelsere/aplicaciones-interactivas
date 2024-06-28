@@ -23,7 +23,6 @@ const ServicesList = () => {
       try {
         const response = await fetch(`http://localhost:8081/api/v1/services/${idProvider}`);
         const data = await response.json();
-  console.log(data)
         if (response.ok) {
           setServices(data);
         } else {
@@ -37,7 +36,7 @@ const ServicesList = () => {
     useEffect(() => {
       if (idProvider) {
         fetchServices();
-      }else{console.log('ERROR')}
+      }
     }, [idProvider]);
   
     const openModalCreateUpdate = (service = null) => {

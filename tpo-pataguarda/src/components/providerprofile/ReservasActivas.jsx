@@ -12,7 +12,7 @@ const ReservasActivas = ({ idProvider }) => {
     try {
       const response = await fetch(`http://localhost:8081/api/v1/bookings/${idProvider}/${'P'}`);
       const data = await response.json();
-      console.log(data);
+      
       if (response.ok) {
         setReservas(data);
       } else {
@@ -23,10 +23,8 @@ const ReservasActivas = ({ idProvider }) => {
     }
   };
 
-  // Fetch bookings when the component mounts
+
   useEffect(() => {
-    console.log('fetch');
-    console.log(idProvider);
     if (idProvider) {
       fetchBookings();
     }

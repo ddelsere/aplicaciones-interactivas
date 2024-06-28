@@ -8,7 +8,7 @@ function Filter() {
   const location = useLocation();
   const { user } = location.state || {};
   const [filtro, setFiltro] = useState({});
-  console.log(filtro)
+  
   return (
     <div>
       <HeaderClientes user={user} />

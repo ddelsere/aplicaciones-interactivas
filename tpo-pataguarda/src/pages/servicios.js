@@ -94,12 +94,7 @@ function Servicios() {
                   <label for="contraseña">Contraseña:</label>
                   <input type="password" name="password" value={formData.password} onChange={handleChange} required />
                 </div>
-                {/* <div className="upload-photo-container">
-                <div className="upload-photo-circle">
-                  <input type="file" accept="image/*" className="upload-photo" onChange={handleFileChange} />
-                </div>
-                <span className="update-photo-text">Subir Foto</span>
-              </div> */}
+                
                 <button type="submit">¡Vamos allá!</button>
               </div>
             </div>
