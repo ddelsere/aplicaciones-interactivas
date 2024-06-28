@@ -1,5 +1,3 @@
-// src/components/EditInfoModal/EditInfoModal.js
-
 import React, { useState } from 'react';
 import './EditInfoModal.css';
 
@@ -16,24 +14,25 @@ const EditInfoModal = ({ onClose, user }) => {
     updateUser();
   };
 
-  const updateUser = async() =>{
-    let body = {id: user.id, name: name, surname: surname, email: email, address: address, phoneNumber: phoneNumber}
-    
+  const updateUser = async () => {
+    let body = { id: user.id, name: name, surname: surname, email: email, address: address, phoneNumber: phoneNumber };
+
     const response = await fetch(`http://localhost:8081/api/v1/users/${user.id}`, {
       method: 'PUT',
       headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
-  });
-  if (response.ok) {
-    const updatedUser = await response.json();
-    console.log('Información actualizada:', updatedUser);
-    onClose(updatedUser); 
-  } else {
-    console.error('Error updating user information');
-  }
-  }
+    });
+
+    if (response.ok) {
+      const updatedUser = await response.json();
+      console.log('Información actualizada:', updatedUser);
+      onClose(updatedUser);
+    } else {
+      console.error('Error updating user information');
+    }
+  };
 
   return (
     <div className="edit-info-modal">
@@ -61,7 +60,7 @@ const EditInfoModal = ({ onClose, user }) => {
         </label>
         <div className="modal-buttons">
           <button type="submit">Guardar</button>
-          <button type="button" onClick={onClose}>Cancelar</button>
+          <button type="button" onClick={() => onClose(null)}>Cancelar</button>
         </div>
       </form>
     </div>
