@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import UserInfo from './UserInfo.jsx'; // Reutilizamos este componente
+import UserInfo from './UserInfo.jsx'; 
 import EditInfoModal from './EditInfoModal.jsx';
-import UserProfileHeader from './UserProfileHeader.jsx'; // Reutilizamos este componente con modificaciones
-import ReservasActivas from './ReservasActivas.jsx'; // Nuevo componente
-// import './ProviderProfile.css'; // Archivo de estilos específicos
+import ReservasActivas from './ReservasActivas.jsx'; 
 import { useLocation } from 'react-router-dom';
 import '../servicesClient/userInfo.css';
 

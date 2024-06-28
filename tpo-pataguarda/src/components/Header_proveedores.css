@@ -5,8 +5,8 @@
 
 .navbar-brand {
     font-weight: bold;
-    color: white; /* Color del texto de la marca */
-    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: white; 
+    text-decoration: none; 
 }
 
 .navbar {
@@ -14,27 +14,25 @@
 }
 
 .navbar-nav .nav-link {
-    color: white; /* Color del texto de los enlaces */
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    white-space: nowrap;
-    
-   
+    color: white; 
+    text-decoration: none; 
+    white-space: nowrap;   
 }
 
 .navbar-nav .nav-link:hover {
-    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
+    color: lightgrey; 
 }
 
 #nombre {
     color: white;
-    text-decoration: none; /* Elimina el subrayado por defecto */
+    text-decoration: none; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #nombre:hover {
-    color: lightgrey; /* Cambia el color del texto del enlace cuando se pasa el cursor sobre él */
+    color: lightgrey; 
 }
 
 /* Estilos del dropdown */
@@ -51,10 +49,10 @@
 }
 
 .dropdown-content a {
-    color: white; /* Color del texto de los enlaces dentro del dropdown */
+    color: white;
     padding: 3%;
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    display: flex; /* Muestra los enlaces en bloque */
+    text-decoration: none; 
+    display: flex; 
     justify-content: center;
 }
 
@@ -83,28 +81,28 @@
 
 @media (max-width: 900px) {
     .navbar-nav .nav-link {
-        padding: 2%; /* Ajusta el padding para mejorar el espacio en pantallas pequeñas */
+        padding: 2%; 
     }
 
     .navbar-toggler {
         background-image: url('../assets/images/menu.png');
-        display: block; /* Muestra el botón del toggler en pantallas pequeñas */
+        display: block; 
         background-color: transparent;
-        background-size: contain; /* Ajusta el tamaño de la imagen al contenedor */
-        background-repeat: no-repeat; /* Evita que la imagen se repita */
-        background-position: center; /* Centra la imagen en el contenedor */
-        width: 3rem; /* Ajusta el ancho del botón */
-        height: 3rem; /* Ajusta la altura del botón */
-        border: none; /* Elimina el borde */
-        padding: 0; /* Elimina el padding */
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        width: 3rem; 
+        height: 3rem; 
+        border: none; 
+        padding: 0; 
     }
 
     .collapse {
-        display: block; /* Oculta la barra de navegación colapsada por defecto */
+        display: block; 
     }
 
     .collapse.show {
-        display: block; /* Muestra la barra de navegación cuando se colapsa en pantallas pequeñas */
+        display: block; 
     }
 
     .navbar-nav {
@@ -119,12 +117,12 @@
     }
 
     .dropdown-content {
-        position: static; /* Cambia la posición del dropdown en pantallas pequeñas */
+        position: static; 
         width: 100%;
         box-shadow: none;
     }
 
     .navbar-nav .show .dropdown-content {
-        display: block; /* Muestra el dropdown cuando se abre en pantallas pequeñas */
+        display: block; 
     }
 }

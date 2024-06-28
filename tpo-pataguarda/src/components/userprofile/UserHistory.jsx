@@ -1,7 +1,4 @@
-// src/components/UserHistory/UserHistory.js
-
 import React from 'react';
-// import './UserHistory.css';
 import '../services/serviceCard.css'
 import '../services/serviceList.css';
 import { useState, useEffect } from 'react';
@@ -33,7 +30,7 @@ const UserHistory = ({ idUser }) => {
 
   return (
     <div className="services-list">
-      <h2>Tu Historial</h2>
+      <h1>Tu Historial</h1>
       {reservas.map((reserva, index) => (
         <div key={index} className="service-card client">
           <div className="service-details">

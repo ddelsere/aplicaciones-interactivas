@@ -6,13 +6,11 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  position: absolute; /* Cambia a absolute */
-  
- 
+  position: absolute;
 }
 
 .footer p {
-  margin: 20px; /* Elimina el margen por defecto del párrafo */
+  margin: 1.25em;
 }
 
 .redes {
@@ -22,27 +20,27 @@
 }
 
 .social-icon {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px; /* Espacio entre los iconos */
+  width: 1.5625em;
+  height: 1.5625em;
+  margin-left: 0.625em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .footer {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .footer p {
-      margin: 10px 0;
+    margin: 0.625em 0;
   }
 
   .redes {
-      justify-content: center;
-      margin: 10px 0;
+    justify-content: center;
+    margin: 0.625em 0;
   }
 
   .social-icon {
-      margin: 5px;
+    margin: 0.3125em;
   }
 }
