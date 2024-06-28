@@ -11,6 +11,7 @@ import Booking from './pages/bookingUserInfo';
 import Filter from './pages/filter';
 import UserProfilePage from './pages/userProfile';
 import ProviderProfilePage from './pages/providerProfile';
+import RegisterClient from './components/login/registerClient';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/booking'  element={<Booking/>}/>
           <Route path="/user-profile" element={<UserProfilePage />} />
           <Route path="/provider-profile" element={<ProviderProfilePage />} />
+          <Route path='/register-client' element={<RegisterClient/>}/>
         </Routes>
 
         <Footer />
