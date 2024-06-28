@@ -15,7 +15,7 @@ const Content = ({ className = "" }) => {
   const [active, setActive] = useState('paseo');
 
   const onDoitButtonContainerClick = useCallback(() => {
-    // Please sync "INCIAR SESION" to the project
+    
   }, []);
 
   return (
