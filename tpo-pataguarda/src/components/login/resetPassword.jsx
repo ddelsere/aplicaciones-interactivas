@@ -75,7 +75,7 @@ const ResetPassword = () => {
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Contraseña</label>
+                        <label htmlFor="password">Repetir contraseña</label>
                         <input
                             type="password"
                             id="repeatPassword"
