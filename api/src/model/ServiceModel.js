@@ -1,14 +1,16 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Provider = require('./providerModel'); 
+// import { Op } from '@sequelize/core';
 
-// Define the service model
+// Defino el Schema
 const Service = sequelize.define('Service', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(200),
         allowNull: false,
     },
     price: {
@@ -18,24 +20,51 @@ const Service = sequelize.define('Service', {
             min: 0
         }
     },
-    duration: {
-        type: DataTypes.INTEGER, // Duration in minutes
-        allowNull: false,
-        validate: {
-            min: 0
-        }
-    },
-    category: {
+    frequency: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    zone: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+    score: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    species: {
+        type: DataTypes.STRING(10),
+        allowNull: false
+    },
+    category: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+    },
+    startDate: {
+        type: DataTypes.STRING(10),
+        allowNull: false,
+        validate: {
+            isDate: true
+        }
+    },
+    finishDate: {
+        type: DataTypes.STRING(10),
+        allowNull: false,
+        validate: {
+            isDate: true
+        }
+    },
+    idProvider: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Provider,
+            key: 'id'
+        }  
+    }, 
+    active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
     }
 }, {
     timestamps: true,
@@ -45,5 +74,8 @@ const Service = sequelize.define('Service', {
         }
     }
 });
+
+
+Service.belongsTo(Provider, { foreignKey: 'idProvider' });
 
 module.exports = Service;

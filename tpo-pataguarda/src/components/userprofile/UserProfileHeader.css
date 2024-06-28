@@ -1,0 +1,43 @@
+.user-profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px; /* Ajustar el tamaño máximo */
+    min-height: 370px;
+    padding-bottom: 20px;
+  }
+  
+  .user-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Foto circular */
+    margin-bottom: 10px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    object-position: center;
+  }
+  
+  .user-name {
+    margin: 10px 0;
+    color: #000000; /* Color del texto */
+  }
+  
+  .add-pet-btn {
+    background-color: #28a745;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-pet-btn:hover {
+    background-color: #218838;
+  }
+  

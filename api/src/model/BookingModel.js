@@ -1,38 +1,71 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Service = require('./ServiceModel');
+const User = require('./UserModel');
+const Provider = require('./providerModel');
 
-// Define the booking model
+
 const Booking = sequelize.define('Booking', {
-    customerName: {
-        type: DataTypes.STRING,
+    message: {
+        type: DataTypes.STRING(255),
         allowNull: false,
     },
-    customerEmail: {
+    phoneNumber: {
+        type: DataTypes.STRING(11),
+        allowNull: false,
+    },
+    email: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
             isEmail: true
         }
     },
-    serviceId: {
+    contactHours : {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    },
+    startDate: {
+        type: DataTypes.STRING(10),
+        allowNull: true,
+        validate: {
+            isDate: true
+        }
+    },
+    finishDate: {
+        type: DataTypes.STRING(10),
+        allowNull: true,
+        validate: {
+            isDate: true
+        }
+    },
+    idService: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+            model: Service,
+            key: 'id'
+        }
     },
-    bookingDate: {
-        type: DataTypes.DATE,
+    idUser: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+            model: User,
+            key: 'id'
+        }
+    },
+    idProvider: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Provider,
+            key: 'id'
+        }
     },
     status: {
         type: DataTypes.STRING,
         defaultValue: 'pending',
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
     }
 }, {
     timestamps: true,
@@ -43,4 +76,7 @@ const Booking = sequelize.define('Booking', {
     }
 });
 
+Booking.belongsTo(User, { foreignKey: 'idUser' });
+Booking.belongsTo(Service, {foreignKey: 'idService'})
+Booking.belongsTo(Provider, {foreignKey: 'idProvider'});
 module.exports = Booking;

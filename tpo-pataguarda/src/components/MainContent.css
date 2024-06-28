@@ -1,0 +1,194 @@
+.hero {
+  position: relative;
+  text-align: center;
+  
+}
+
+.hero .hero-image {
+  width: 100%;
+  object-fit: cover; /* ajusta la imagen al tamaño del contenedor */
+  object-position: center; /* centra la imagen horizontalmente */
+  height: 800px;
+}
+
+
+
+.why-pataguarda {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+.parte1{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+
+}
+.parte1 h3{
+  display: flex;
+  align-items:flex-start;
+  justify-content: left;
+  margin-bottom: 2%;
+  margin-top: 2%;
+
+}
+
+.reason1{
+  display: flex;
+  flex-direction: row;
+}
+
+.reason1 p{
+  font-size: large;
+  width: 35%;
+  text-align: left; /* Alinea el texto a la derecha */
+  margin-top: 2%;
+}
+
+.ayuda-icon{
+  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
+  border: 2px solid #000; /* Borde negro con 2px de grosor */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+}
+.reason1 img{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-right: 7%;
+  margin-left: 7%
+  
+}
+
+
+.reason2{
+  display: flex;
+  flex-direction: row;
+}
+
+.reason2 p{
+  font-size: large;
+  width: 35%;
+  text-align: left; /* Alinea el texto a la derecha */
+  margin-top: 2%;
+}
+
+.reason2 .ayuda-icon{
+  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
+  border: 2px solid #000; /* Borde negro con 2px de grosor */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+}
+.reason2 img{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-right: 7%;
+  margin-left: 7%
+  
+}
+
+.reason3{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+
+.reason3 p{
+  font-size: large;
+  width: 35%;
+  text-align: left; /* Alinea el texto a la derecha */
+  margin-top: 2%;
+}
+
+.reason3 .ayuda-icon{
+  border-radius: 50%; /* Hace que el borde sea completamente redondeado */
+  border: 2px solid #000; /* Borde negro con 2px de grosor */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del borde redondeado */
+}
+.reason3 img{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-right: 7%;
+  margin-left: 7%
+  
+}
+
+.pata{
+  
+  width: 100%;
+  background-image: url('../assets/images/vector.png');
+  background-size: 100% 100%;
+  
+}
+footer {
+  z-index: -1; /* Agrega un z-index negativo para que se posicione debajo de la sección */
+  z-index: -1;
+}
+.contratar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+ 
+}
+
+.contratar img.inicio-pataguarda-child {
+  width: 100%;
+  height: auto;
+}
+
+.contratar .overlay-content {
+  
+  margin-top: 3%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  
+ 
+}
+
+
+
+/* Media queries para responsive */
+
+@media (max-width: 768px) {
+  .reason1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reason1 p {
+    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+  }
+  .contratar .overlay-content {
+    margin-top: 15%;
+    width: 100%;
+    
+  }
+  .reason2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reason2 p {
+    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+  }
+  .reason3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reason3 p {
+    width: 100%; /* Ocupa el ancho completo en dispositivos más pequeños */
+  }
+
+ 
+}

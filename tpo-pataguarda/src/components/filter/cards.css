@@ -1,0 +1,57 @@
+.services-container-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #203629;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.service-card-filter {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 1 calc(33.333% - 2rem); 
+    box-sizing: border-box;
+}
+
+.profile-picture { 
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.rating {
+    margin-top: 1rem;
+}
+
+.star {
+    color: lightgrey;
+    font-size: 1.5rem;
+}
+
+.star.filled {
+    color: gold;
+}
+
+.info-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        flex: 0 1 100%;
+    }
+}

@@ -1,0 +1,32 @@
+.services-list {
+    padding: 1.25em; 
+    background: #1f3c31;
+}
+
+.services-list h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 1.25em; 
+}
+
+.add-service-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.625em 1.25em; 
+    font-size: 1em; 
+    cursor: pointer;
+    border-radius: 0.3125em; 
+    transition: background-color 0.3s ease;
+    margin-bottom: 1.25em; 
+}
+
+.add-service-button:hover {
+    background-color: #ddd;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em; 
+}
