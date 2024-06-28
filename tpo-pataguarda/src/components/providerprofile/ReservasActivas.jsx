@@ -69,6 +69,7 @@ const ReservasActivas = ({ idProvider }) => {
 
   return (
     <div className="services-list">
+      <h1>Reservas activas</h1>
       {reservas.map((reserva, index) => (
         <div key={index} className="service-card client">
           <div className="service-details">

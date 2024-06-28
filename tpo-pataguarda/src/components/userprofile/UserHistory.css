@@ -1,34 +1,30 @@
-/* src/components/UserHistory/UserHistory.css */
-
 .user-history {
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ocupa todo el ancho del contenedor disponible */
-    margin-top: 20px;
-  }
-  
-  .user-history h2 {
-    margin-bottom: 20px;
-    color: #000000; /* Color del texto */
-  }
-  
-  .user-history table {
-    width: 100%; /* Tabla ocupando todo el ancho del contenedor */
-    border-collapse: collapse;
-  }
-  
-  .user-history table th,
-  .user-history table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    color: #000000; /* Color del texto */
-  }
-  
-  .user-history table th {
-    background-color: #f2f2f2;
-    text-align: left;
-  }
-  
-  
+  padding: 1.25em;
+  background-color: #ffffff;
+  border-radius: 0.625em;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 1.25em;
+}
+
+.user-history h1 {
+  margin-bottom: 1.25em;
+  color: #000000;
+}
+
+.user-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-history table th,
+.user-history table td {
+  border: 0.0625em solid #ddd;
+  padding: 0.5em;
+  color: #000000;
+}
+
+.user-history table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}

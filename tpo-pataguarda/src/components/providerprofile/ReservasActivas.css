@@ -1,113 +1,103 @@
-/* ReservasActivas.css */
-
-/* Contenedor principal de las reservas activas */
 .reservas-activas {
-    margin-top: 20px;
-  }
-  
-  /* Estilo de cada tarjeta de reserva */
-  .reserva-card {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #4CAF50; /* Indicador visual en el borde izquierdo */
-  }
-  
-  /* Estilo para los títulos de los datos de la reserva */
-  .reserva-card div strong {
-    display: inline-block;
-    width: 120px;
-    font-weight: 600;
-  }
-  
-  /* Estilo para el estado con enlace */
-  .estado-modificar {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  /* Modal para cambiar el estado de la reserva */
-  .estado-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 300px;
-  }
-  
-  /* Estilo para la etiqueta del modal */
-  .estado-modal label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  
-  /* Estilo para el selector del estado */
-  .estado-modal select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  /* Estilo para el botón de guardar en el modal */
-  .estado-modal button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .estado-modal button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Estilo para el contenedor de los mensajes */
-  .reserva-card .mensaje {
-    margin-top: 15px;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  /* Fondo oscuro detrás del modal */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-  
-  /* Ajustes generales para asegurarse de que todo se vea bien */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  
-  /* Ajustes de estilo específicos para la pantalla de perfil */
-  .provider-profile {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
+  margin-top: 1.25em; 
+}
+
+.reserva-card {
+  background-color: #ffffff;
+  padding: 1.25em; 
+  margin-bottom: 0.9375em;
+  border-radius: 0.5em; 
+  box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1); 
+  border-left: 0.3125em solid #4CAF50; 
+}
+
+.reserva-card div strong {
+  display: inline-block;
+  width: 7.5em; 
+  font-weight: 600;
+}
+
+.estado-modificar {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.estado-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 1.875em; 
+  border-radius: 0.5em; 
+  box-shadow: 0 0.25em 0.9375em rgba(0, 0, 0, 0.2); 
+  z-index: 1000;
+  width: 18.75em; 
+}
+
+.estado-modal label {
+  display: block;
+  margin-bottom: 0.625em; 
+  font-weight: 600;
+}
+
+.estado-modal select {
+  width: 100%;
+  padding: 0.625em; 
+  margin-bottom: 1.25em;
+  border-radius: 0.25em; 
+  border: 0.0625em solid #ddd; 
+}
+
+.estado-modal button {
+  display: block;
+  width: 100%;
+  padding: 0.625em; 
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25em; 
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.estado-modal button:hover {
+  background-color: #45a049;
+}
+
+.reserva-card .mensaje {
+  margin-top: 0.9375em; 
+  background-color: #f0f0f0;
+  padding: 0.625em; 
+  border-radius: 0.25em; 
+  border: 0.0625em solid #ddd; 
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.provider-profile {
+  max-width: 56.25em; 
+  margin: 0 auto;
+  padding: 1.25em; 
+  background-color: #f9f9f9;
+}
+
+h1 {
+  color: white;
+  padding-left: 4%; 
+}

@@ -1,80 +1,76 @@
-/* src/components/AddPet/AddPet.css */
-
 .add-pet-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .add-pet-modal h2 {
-    margin-top: 0;
-  }
-  
-  .add-pet-modal form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .add-pet-modal label {
-    margin-bottom: 10px;
-  }
-  
-  .add-pet-modal input[type="text"] {
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para el fieldset de tipo de mascota */
-  .pet-type-fieldset {
-    margin: 15px 0;
-    border: none;
-    padding: 0;
-  }
-  
-  .pet-type-fieldset legend {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .pet-type-fieldset label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .pet-type-fieldset input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  .modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .modal-buttons button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-buttons button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .modal-buttons button[type="button"] {
-    background-color: #6c757d;
-    color: white;
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1.25em;
+  border-radius: 0.625em;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.add-pet-modal h2 {
+  margin-top: 0;
+}
+
+.add-pet-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-pet-modal label {
+  margin-bottom: 0.625em;
+}
+
+.add-pet-modal input[type="text"] {
+  padding: 0.3125em;
+  margin-top: 0.3125em;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.3125em;
+}
+
+.pet-type-fieldset {
+  margin: 0.9375em 0;
+  border: none;
+  padding: 0;
+}
+
+.pet-type-fieldset legend {
+  font-weight: bold;
+  margin-bottom: 0.625em;
+}
+
+.pet-type-fieldset label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.625em;
+  cursor: pointer;
+}
+
+.pet-type-fieldset input[type="radio"] {
+  margin-right: 0.625em;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.625em;
+}
+
+.modal-buttons button {
+  padding: 0.625em;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.modal-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-buttons button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
